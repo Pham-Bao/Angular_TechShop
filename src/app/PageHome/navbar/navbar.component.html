@@ -1,0 +1,76 @@
+<nav class="navbar" [class.active]="isNavbarVisible">
+  <div class="navbar-container">
+    
+    <img width="20" height="20" src="https://img.icons8.com/ios/50/000000/circuit.png" alt="circuit" class="navbar-logo" />
+
+    <div class="navbar-menu" [class.active]="isNavbarVisible">
+      <div class="dropdown" (mouseenter)="showDropdown('iPad')" (mouseleave)="hideDropdown('iPad')">
+        <span>iPad</span>
+        <div *ngIf="isDropdownVisibleShop['iPad']" class="dropdown-content">
+          <app-dropdown-menu></app-dropdown-menu>
+        </div>
+      </div>
+
+      <div class="dropdown" (mouseenter)="showDropdown('iPhone')" (mouseleave)="hideDropdown('iPhone')">
+        <span>iPhone</span>
+        <div *ngIf="isDropdownVisibleShop['iPhone']" class="dropdown-content">
+          <app-dropdown-menu></app-dropdown-menu>
+        </div>
+      </div>
+
+      <div class="dropdown" (mouseenter)="showDropdown('Watch')" (mouseleave)="hideDropdown('Watch')">
+        <span>Watch</span>
+        <div *ngIf="isDropdownVisibleShop['Watch']" class="dropdown-content">
+          <app-dropdown-menu></app-dropdown-menu>
+        </div>
+      </div>
+
+      <div class="dropdown" (mouseenter)="showDropdown('AirPods')" (mouseleave)="hideDropdown('AirPods')">
+        <span>AirPods</span>
+        <div *ngIf="isDropdownVisibleShop['AirPods']" class="dropdown-content">
+          <app-dropdown-menu></app-dropdown-menu>
+        </div>
+      </div>
+
+      <div class="dropdown" (mouseenter)="showDropdown('TV & Nhà')" (mouseleave)="hideDropdown('TV & Nhà')">
+        <span>TV & Nhà</span>
+        <div *ngIf="isDropdownVisibleShop['TV & Nhà']" class="dropdown-content">
+          <app-dropdown-menu></app-dropdown-menu>
+        </div>
+      </div>
+
+      <div class="dropdown" (mouseenter)="showDropdown('Giải Trí')" (mouseleave)="hideDropdown('Giải Trí')">
+        <span>Giải Trí</span>
+        <div *ngIf="isDropdownVisibleShop['Giải Trí']" class="dropdown-content">
+          <app-dropdown-menu></app-dropdown-menu>
+        </div>
+      </div>
+
+      <div class="dropdown" (mouseenter)="showDropdown('Phụ Kiện')" (mouseleave)="hideDropdown('Phụ Kiện')">
+        <span>Phụ Kiện</span>
+        <div *ngIf="isDropdownVisibleShop['Phụ Kiện']" class="dropdown-content">
+          <app-dropdown-menu></app-dropdown-menu>
+        </div>
+      </div>
+
+      <div class="dropdown" (mouseenter)="showDropdown('Hỗ Trợ')" (mouseleave)="hideDropdown('Hỗ Trợ')">
+        <span>Hỗ Trợ</span>
+        <div *ngIf="isDropdownVisibleShop['Hỗ Trợ']" class="dropdown-content">
+          <app-dropdown-menu></app-dropdown-menu>
+        </div>
+      </div>
+    </div>
+    <div class="navbar-right">
+      <!-- Icon tìm kiếm -->
+      <i class="fa-solid fa-magnifying-glass mx-3"></i>
+      
+      <!-- Icon giỏ hàng -->
+      <img src="assets/icons/cart.png" alt="cart" class="icon mx-3">
+      
+      <!-- Nút toggle cho menu -->
+      <button class="navbar-toggler" (click)="toggleNavbar()">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </div>
+</nav>

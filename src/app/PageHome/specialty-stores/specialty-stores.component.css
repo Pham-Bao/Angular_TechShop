@@ -1,0 +1,230 @@
+.product-wrapper {
+    position: relative;
+}
+
+.product-card, .product-black-card {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+    border-radius: 14px;
+    max-width: 500px;
+    height: 500px; /* Đặt chiều cao cho thẻ */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.product-card .text-container, .product-black-card .text-container {
+    padding: 18px;
+    border-radius: 10px;
+}
+
+.product-card h4, .product-card h2, .product-card p,
+.product-black-card h4, .product-black-card h2, .product-black-card p {
+    margin: 0;
+}
+
+.product-card h4 {
+    font-size: 14px;
+    color: #8b8b8b;
+}
+
+.product-black-card h4 {
+    font-size: 14px;
+    color: #ffffff;
+}
+
+.product-black-card h2 {
+    margin: 10px 0;
+    font-size: 24px;
+    color: #ffffff;
+
+}
+
+.product-card h2, .product-black-card h2 {
+    margin: 10px 0;
+    font-size: 24px;
+    font-weight: bold;
+
+}
+
+.product-card p {
+    font-size: 14px;
+}
+.product-black-card p {
+    font-size: 14px;
+    color: #ffffff;
+
+}
+
+.product-card:hover, .product-black-card:hover {
+    transform: scale(1.01);
+}
+
+.iphone {
+    background-image: url('../../../assets/img/imgss1.png');
+}
+
+
+.ipad {
+    background-image: url('../../../assets/img/imgss2.png');
+}
+
+
+
+
+.product-container {
+    display: flex;
+    overflow-x: auto;
+    padding-bottom: 20px; /* Để tránh bị che phủ nút cuộn khi hiển thị */
+    gap: 20px;
+    scroll-behavior: smooth; /* Đảm bảo cuộn mượt mà */
+
+}
+
+.product-wrapper:hover .scroll-btn {
+    display: flex;
+}
+
+.main-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #000;
+    margin: 0;
+}
+
+
+.sub-title-text {
+    font-size: 28px;
+    font-weight: normal;
+    color: #6f6e72;
+}
+
+.button-container {
+    display: flex;
+    gap: 20px;
+    scroll-behavior: smooth;
+    overflow-x: scroll; /* Cho phép cuộn ngang */
+    -webkit-overflow-scrolling: touch; /* Hỗ trợ cuộn mượt trên iOS */
+    padding-bottom: 20px; /* Đảm bảo không bị che phủ bởi thanh cuộn */
+
+}
+
+.button-container {
+    display: flex;
+    gap: 20px;
+    scroll-behavior: smooth;
+    overflow-x: auto; /* Cho phép cuộn ngang */
+    -webkit-overflow-scrolling: touch; /* Hỗ trợ cuộn mượt trên iOS */
+    padding-bottom: 20px; /* Đảm bảo không bị che phủ bởi thanh cuộn */
+    white-space: nowrap; /* Ngăn các nút xuống dòng */
+}
+
+.button-container::-webkit-scrollbar {
+    display: none; /* Ẩn thanh cuộn trên các trình duyệt Webkit (Chrome, Safari) */
+}
+
+.button-container {
+    -ms-overflow-style: none;  /* Ẩn thanh cuộn trên Internet Explorer và Edge */
+    scrollbar-width: none;  /* Ẩn thanh cuộn trên Firefox */
+}
+
+.site-btn {
+    font-size: 10px;
+    display: inline-block;
+    padding: 8px 14px;
+    border: 1px solid #000000; /* Viền 1px màu đen */
+    border-radius: 50px; /* Độ cong góc */
+    text-transform: uppercase; /* Chuyển đổi chữ thành chữ in hoa */
+    color: #3b3b3b; /* Màu chữ ban đầu */
+    background-color: transparent; /* Nền trong suốt */
+    text-decoration: none; /* Loại bỏ gạch chân mặc định */
+    position: relative;
+    overflow: hidden;
+    transition: color 0.3s, background-color 0.3s; /* Hiệu ứng khi hover */
+    margin-right: 14px; /* Khoảng cách giữa các nút */
+    white-space: nowrap; /* Đảm bảo nội dung không bị ngắt dòng */
+    flex-shrink: 0; /* Ngăn nút bị thu nhỏ */
+}
+
+.site-btn:hover {
+    color: #ffffff; /* Màu chữ khi hover */
+    background-color: #000000; /* Màu nền khi hover */
+}
+
+
+
+@media (max-width: 768px) {
+    .product-card, .product-black-card {
+      max-width: 100%; /* Chiều rộng tối đa cho thiết bị di động */
+      min-width: auto; /* Bỏ qua min-width cho thiết bị di động */
+      height: auto; /* Chiều cao tự động thích hợp */
+    }
+
+    .product-card, .product-black-card {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        transition: transform 0.2s;
+        border-radius: 14px;
+        min-width: 320px;
+        height: 500px; /* Đặt chiều cao cho thẻ */
+        background-size: cover;
+        background-position: center;
+        position: relative;
+    }
+    
+    .product-card .text-container, .product-black-card .text-container {
+        padding: 14px;
+        border-radius: 10px;
+    }
+    
+    .product-card h4, .product-card h2, .product-card p,
+    .product-black-card h4, .product-black-card h2, .product-black-card p {
+        margin: 0;
+    }
+    
+    .product-card h4 {
+        font-size: 12px;
+        color: #8b8b8b;
+    }
+    
+    .product-black-card h4 {
+        font-size: 12px;
+        color: #ffffff;
+    }
+    
+    .product-black-card h2 {
+        margin: 10px 0;
+        font-size: 18px;
+        color: #ffffff;
+    
+    }
+    
+    .product-card h2, .product-black-card h2 {
+        margin: 10px 0;
+        font-size: 18px;
+    }
+    
+    .product-card p {
+        font-size: 12px;
+    }
+    .product-black-card p {
+        font-size: 12px;
+        color: #ffffff;
+    
+    }
+    
+    .product-card:hover, .product-black-card:hover {
+        transform: scale(1.01);
+    }
+
+    .site-btn:hover {
+        color: #ffffff; /* Màu chữ khi hover */
+        background-color: #000000; /* Màu nền khi hover */
+    }
+    
+  }

@@ -1,0 +1,7 @@
+.bgr {
+    width: 100%;
+    height: 100vh; /* Sử dụng 100vh để đảm bảo rằng nó chiếm toàn bộ chiều cao của viewport */
+    margin: 0;
+    padding: 0;
+  }
+  

@@ -1,0 +1,115 @@
+
+<div class="container  border-top mt-5">
+
+    <div class="container mt-5">
+        <div class="blog__details__comment">
+            <h4>Đánh giá của bạn về Shop</h4>
+            <form action="#">
+                <div class="row">
+                    <div class="col-lg-4 col-md-4">
+                        <input type="text" placeholder="Tên của bạn">
+                    </div>
+                    <div class="col-lg-4 col-md-4">
+                        <input type="text" placeholder="Email">
+                    </div>
+                    <div class="col-lg-4 col-md-4">
+                        <input type="text" placeholder="Số điện thoại">
+                    </div>
+                    <div class="col-lg-12 text-center">
+                        <textarea placeholder="Comment"></textarea>
+                        <button type="submit" class="site-btn">Gửi đánh giá</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+<div class="mt-5 text-center border-top">
+    <p class="h3 mt-3 ">Đăng Ký để nhận thông tin từ Shop Tech </p>
+    <a>Thông tin sản phẩm mới nhất và chương trình khuyến mãi</a><br />
+
+    <a style="text-decoration:none" type="submit" class="btn btn-dark" href="~/khachhang/dangky">Đăng ký</a>
+</div>
+
+<div class="container-fluid mt-3">
+    <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top text-dark">
+        <div class="col mb-3">
+            <div class="">
+                <a class="navbar-brand" href="#">
+                    <img width="28" height="28" src="https://img.icons8.com/ios/50/000000/circuit.png" alt="circuit" />
+                    <abbr class="text-dark h5"> Tech Shop</abbr>
+                </a>
+            </div>
+            <div class="icons mt-3" style="text-decoration: none">
+                <div class="icon-row mt-2">
+                    <img width="24" height="24" src="https://img.icons8.com/color/48/facebook.png" alt="facebook" />
+                    <a style="text-decoration: none" class="text-dark fs-7 mx-2" href="#">Facebook</a>
+                </div>
+                <div class="icon-row mt-2">
+                    <img width="24" height="24" src="https://img.icons8.com/color/48/zalo.png" alt="zalo" />
+                    <a style="text-decoration: none" class="text-dark fs-7 mx-2" href="#">Zalo</a>
+                </div>
+                <div class="icon-row mt-2 mt-2">
+                    <img width="24" height="24" src="https://img.icons8.com/fluency/48/instagram-new.png" alt="instagram-new" />
+                    <a style="text-decoration: none" class="text-dark fs-7 mx-2" href="#">Instagram</a>
+                </div>
+                <div class="icon-row mt-2">
+                    <img width="24" height="24" src="https://img.icons8.com/color/48/google-logo.png" alt="google-logo" />
+                    <a style="text-decoration: none" class="text-dark fs-7 mx-2" href="#">Google</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+
+        </div>
+        <div class="col mb-3">
+            <h4 (click)="toggleSection('services')"> 
+                <font class="h5" style="vertical-align: inherit;">
+                    <font style="vertical-align: inherit;">Loại Dịch Vụ</font>
+                </font>
+            </h4>
+            <ul class="nav flex-column mt-3 text-dark" *ngIf="expandedSections['services']">
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Điện thoại</font></font></a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Phụ Kiện</font></font></a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">LapTop</font></font></a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Ipad</font></font></a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Sửa chữa</font></font></a></li>
+            </ul>
+        </div>
+
+        <div class="col mb-3">
+            <h4 (click)="toggleSection('policies')">
+                <font class="h5" style="vertical-align: inherit;">
+                    <font style="vertical-align: inherit;">Chính Sách</font>
+                </font>
+            </h4>
+            <ul class="nav flex-column mt-3" *ngIf="expandedSections['policies']">
+                <li class="nav-item mb-2 text-dark"><a href="#" class="nav-link p-0 text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Khuyến mãi</font></font></a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Chi ân khách hàng</font></font></a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Giảm giá </font></font></a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Giải quyết khiếu nại</font></font></a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Tuyển dụng</font></font></a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Phục vụ khách hàng</font></font></a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Giao Hàng</font></font></a></li>
+            </ul>
+        </div>
+
+        <div class="col mb-3">
+            <h4 (click)="toggleSection('contacts')">
+                <font class="h5" style="vertical-align: inherit;">
+                    <font style="vertical-align: inherit;">Địa Chỉ & Liên Hệ</font>
+                </font>
+            </h4>
+            <ul class="nav flex-column mt-3" *ngIf="expandedSections['contacts']">
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Tài khoản của tôi</font></font></a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Hệ thống cửa hàng</font></font></a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">SĐT:0944806416</font></font></a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Gmail:baodau1499@gmail.com</font></font></a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Fabook: Bảo Đậu</font></font></a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Zalo: 0944806416</font></font></a></li>
+            </ul>
+        </div>
+    </footer>
+</div>
+
+  
+</div>

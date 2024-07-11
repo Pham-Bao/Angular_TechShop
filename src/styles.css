@@ -1,1 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: auto;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f5f5f7;
+
+  }
+  
+  .navbar-center span {
+    font-family: 'Roboto', sans-serif;
+  }
+  @import "~@fortawesome/fontawesome-free/css/all.css";

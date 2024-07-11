@@ -1,0 +1,216 @@
+.product-wrapper {
+    position: relative;
+}
+
+.product-card, .product-black-card {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+    border-radius: 14px;
+    min-width: 420px;
+    height: 500px; /* Đặt chiều cao cho thẻ */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.product-card .text-container, .product-black-card .text-container {
+    padding: 18px;
+    border-radius: 10px;
+}
+
+.product-card h4, .product-card h2, .product-card p,
+.product-black-card h4, .product-black-card h2, .product-black-card p {
+    margin: 0;
+}
+
+.product-card h4 {
+    font-size: 14px;
+    color: #8b8b8b;
+}
+
+.product-black-card h4 {
+    font-size: 14px;
+    color: #ffffff;
+}
+
+.product-black-card h2 {
+    margin: 10px 0;
+    font-size: 24px;
+    color: #ffffff;
+
+}
+
+.product-card h2, .product-black-card h2 {
+    margin: 10px 0;
+    font-size: 24px;
+}
+
+.product-card p {
+    font-size: 14px;
+}
+.product-black-card p {
+    font-size: 14px;
+    color: #ffffff;
+
+}
+
+.product-card:hover, .product-black-card:hover {
+    transform: scale(1.01);
+}
+
+.iphone {
+    background-image: url('../../../assets/img/item_bgr1.png');
+}
+
+.ipadpro {
+    background-image: url('../../../assets/img/item_bgr2.png');
+}
+
+.macbook {
+    background-image: url('../../../assets/img/item_bgr3.png');
+}
+
+.ipad {
+    background-image: url('../../../assets/img/item_bgr4.png');
+}
+
+.iphone15 {
+    background-image: url('../../../assets/img/item_bgr5.png');
+}
+
+.scroll-btn {
+    display: none;
+    position: absolute;
+    top: 50%;
+    background-color: rgba(75, 75, 75, 0.5);
+    color: #fff;
+    border: none;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 100;
+    transform: translateY(-50%);
+
+}
+
+.left-btn {
+    left: 20px;
+}
+
+.right-btn {
+    right: 20px;
+}
+
+.scroll-btn:hover {
+    background-color: rgba(77, 77, 77, 0.7);
+}
+
+.product-container {
+    display: flex;
+    gap: 20px;
+    scroll-behavior: smooth;
+    overflow-x: scroll; /* Cho phép cuộn ngang */
+    -webkit-overflow-scrolling: touch; /* Hỗ trợ cuộn mượt trên iOS */
+    padding-bottom: 20px; /* Đảm bảo không bị che phủ bởi thanh cuộn */
+  }
+
+.product-wrapper:hover .scroll-btn {
+    display: flex;
+}
+
+.product-container::-webkit-scrollbar {
+    display: none; /* Ẩn thanh cuộn trên các trình duyệt Webkit (Chrome, Safari) */
+  }
+  
+  .product-container {
+    -ms-overflow-style: none;  /* Ẩn thanh cuộn trên Internet Explorer và Edge */
+    scrollbar-width: none;  /* Ẩn thanh cuộn trên Firefox */
+  }
+  
+
+.main-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #000;
+    margin: 0;
+}
+
+.sub-title-text {
+    font-size: 28px;
+    font-weight: normal;
+    color: #6f6e72;
+}
+@media (max-width: 768px) {
+    .product-card, .product-black-card {
+      max-width: 100%; /* Chiều rộng tối đa cho thiết bị di động */
+      min-width: auto; /* Bỏ qua min-width cho thiết bị di động */
+      height: auto; /* Chiều cao tự động thích hợp */
+    }
+
+    .product-card, .product-black-card {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        transition: transform 0.2s;
+        border-radius: 14px;
+        min-width: 320px;
+        height: 500px; /* Đặt chiều cao cho thẻ */
+        background-size: cover;
+        background-position: center;
+        position: relative;
+    }
+    
+    .product-card .text-container, .product-black-card .text-container {
+        padding: 14px;
+        border-radius: 10px;
+    }
+    
+    .product-card h4, .product-card h2, .product-card p,
+    .product-black-card h4, .product-black-card h2, .product-black-card p {
+        margin: 0;
+    }
+    
+    .product-card h4 {
+        font-size: 12px;
+        color: #8b8b8b;
+    }
+    
+    .product-black-card h4 {
+        font-size: 12px;
+        color: #ffffff;
+    }
+    
+    .product-black-card h2 {
+        margin: 10px 0;
+        font-size: 18px;
+        color: #ffffff;
+    
+    }
+    
+    .product-card h2, .product-black-card h2 {
+        margin: 10px 0;
+        font-size: 18px;
+    }
+    
+    .product-card p {
+        font-size: 12px;
+    }
+    .product-black-card p {
+        font-size: 12px;
+        color: #ffffff;
+    
+    }
+    
+    .product-card:hover, .product-black-card:hover {
+        transform: scale(1.01);
+    }
+    
+  }
