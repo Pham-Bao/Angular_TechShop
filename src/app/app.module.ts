@@ -11,6 +11,17 @@ import { FooterComponent } from './PageHome/footer/footer.component';
 import { ProductComponent } from './PageHome/product/product.component';
 import { SpecialtyStoresComponent } from './PageHome/specialty-stores/specialty-stores.component';
 import { DropdownMenuComponent } from './PageHome/dropdown-menu/dropdown-menu.component';
+import { ShopComponent } from './PageHome/Dropdown/shop/shop.component';
+import { IphoneComponent } from './PageHome/Dropdown/iphone/iphone.component';
+import { IpadComponent } from './PageHome/Dropdown/ipad/ipad.component';
+import { MacComponent } from './PageHome/Dropdown/mac/mac.component';
+import { WatchComponent } from './PageHome/Dropdown/watch/watch.component';
+import { AirPodsComponent } from './PageHome/Dropdown/air-pods/air-pods.component';
+import { TVHomeComponent } from './PageHome/Dropdown/tvhome/tvhome.component';
+import { FunComponent } from './PageHome/Dropdown/fun/fun.component';
+import { AccessoryComponent } from './PageHome/Dropdown/accessory/accessory.component';
+import { SearchComponent } from './PageHome/Dropdown/search/search.component';
+import { CartComponent } from './PageHome/Dropdown/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +33,18 @@ import { DropdownMenuComponent } from './PageHome/dropdown-menu/dropdown-menu.co
     FooterComponent,
     ProductComponent,
     SpecialtyStoresComponent,
-    DropdownMenuComponent
+    DropdownMenuComponent,
+    ShopComponent,
+    IphoneComponent,
+    IpadComponent,
+    MacComponent,
+    WatchComponent,
+    AirPodsComponent,
+    TVHomeComponent,
+    FunComponent,
+    AccessoryComponent,
+    SearchComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,

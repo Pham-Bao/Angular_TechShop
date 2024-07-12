@@ -1,0 +1,22 @@
+.dropdown-menu {
+    display: flex;
+    justify-content: space-around;
+    padding: 24px;
+    width: 100%; /* Full width */
+    border: none; /* Remove border */
+    box-shadow: none; /* Remove box shadow */
+    color: black;
+
+  }
+  
+  .dropdown-column {
+    flex: 1; /* Equally divide space among columns */
+    padding: 24px;
+  }
+  
+  .p {
+    margin-bottom: 8px;
+    color: rgb(154, 154, 154);
+    font-size: 14px;
+  }
+  

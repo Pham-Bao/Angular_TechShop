@@ -1,64 +1,67 @@
-<nav class="navbar" [class.active]="isNavbarVisible">
+<nav class="navbar" [class.active]="active">
   <div class="navbar-container">
     
     <img width="20" height="20" src="https://img.icons8.com/ios/50/000000/circuit.png" alt="circuit" class="navbar-logo" />
 
-    <div class="navbar-menu" [class.active]="isNavbarVisible">
-      <div class="dropdown" (mouseenter)="showDropdown('iPad')" (mouseleave)="hideDropdown('iPad')">
+    <div class="navbar-menu">
+
+     
+
+      <div class="dropdown" (mouseenter)="showDropdown('iPad')" (mouseleave)="hideDropdown('iPad', $event)">
         <span>iPad</span>
-        <div *ngIf="isDropdownVisibleShop['iPad']" class="dropdown-content">
-          <app-dropdown-menu></app-dropdown-menu>
+        <div *ngIf="isDropdownVisibleShop['iPad']" class="dropdown-content" (mouseenter)="preventHideDropdown()" (mouseleave)="hideDropdown('iPad', $event)">
+          <app-ipad></app-ipad>
         </div>
       </div>
 
-      <div class="dropdown" (mouseenter)="showDropdown('iPhone')" (mouseleave)="hideDropdown('iPhone')">
+      <div class="dropdown" (mouseenter)="showDropdown('iPhone')" (mouseleave)="hideDropdown('iPhone', $event)">
         <span>iPhone</span>
-        <div *ngIf="isDropdownVisibleShop['iPhone']" class="dropdown-content">
-          <app-dropdown-menu></app-dropdown-menu>
+        <div *ngIf="isDropdownVisibleShop['iPhone']" class="dropdown-content" (mouseenter)="preventHideDropdown()" (mouseleave)="hideDropdown('iPhone', $event)">
+          <app-iphone></app-iphone>
         </div>
       </div>
 
-      <div class="dropdown" (mouseenter)="showDropdown('Watch')" (mouseleave)="hideDropdown('Watch')">
+      <div class="dropdown" (mouseenter)="showDropdown('Watch')" (mouseleave)="hideDropdown('Watch', $event)">
         <span>Watch</span>
-        <div *ngIf="isDropdownVisibleShop['Watch']" class="dropdown-content">
-          <app-dropdown-menu></app-dropdown-menu>
+        <div *ngIf="isDropdownVisibleShop['Watch']" class="dropdown-content" (mouseenter)="preventHideDropdown()" (mouseleave)="hideDropdown('Watch', $event)">
+          <app-watch></app-watch>
         </div>
       </div>
 
-      <div class="dropdown" (mouseenter)="showDropdown('AirPods')" (mouseleave)="hideDropdown('AirPods')">
+      <div class="dropdown" (mouseenter)="showDropdown('AirPods')" (mouseleave)="hideDropdown('AirPods', $event)">
         <span>AirPods</span>
-        <div *ngIf="isDropdownVisibleShop['AirPods']" class="dropdown-content">
-          <app-dropdown-menu></app-dropdown-menu>
+        <div *ngIf="isDropdownVisibleShop['AirPods']" class="dropdown-content" (mouseenter)="preventHideDropdown()" (mouseleave)="hideDropdown('AirPods', $event)">
+          <app-air-pods></app-air-pods>
         </div>
       </div>
 
-      <div class="dropdown" (mouseenter)="showDropdown('TV & Nhà')" (mouseleave)="hideDropdown('TV & Nhà')">
+      <div class="dropdown" (mouseenter)="showDropdown('TV & Nhà')" (mouseleave)="hideDropdown('TV & Nhà', $event)">
         <span>TV & Nhà</span>
-        <div *ngIf="isDropdownVisibleShop['TV & Nhà']" class="dropdown-content">
-          <app-dropdown-menu></app-dropdown-menu>
+        <div *ngIf="isDropdownVisibleShop['TV & Nhà']" class="dropdown-content" (mouseenter)="preventHideDropdown()" (mouseleave)="hideDropdown('TV & Nhà', $event)">
+          <app-tvhome></app-tvhome>
         </div>
       </div>
 
-      <div class="dropdown" (mouseenter)="showDropdown('Giải Trí')" (mouseleave)="hideDropdown('Giải Trí')">
+      <div class="dropdown" (mouseenter)="showDropdown('Giải Trí')" (mouseleave)="hideDropdown('Giải Trí', $event)">
         <span>Giải Trí</span>
-        <div *ngIf="isDropdownVisibleShop['Giải Trí']" class="dropdown-content">
-          <app-dropdown-menu></app-dropdown-menu>
+        <div *ngIf="isDropdownVisibleShop['Giải Trí']" class="dropdown-content" (mouseenter)="preventHideDropdown()" (mouseleave)="hideDropdown('Giải Trí', $event)">
+          <app-fun></app-fun>
         </div>
       </div>
 
-      <div class="dropdown" (mouseenter)="showDropdown('Phụ Kiện')" (mouseleave)="hideDropdown('Phụ Kiện')">
+      <div class="dropdown" (mouseenter)="showDropdown('Phụ Kiện')" (mouseleave)="hideDropdown('Phụ Kiện', $event)">
         <span>Phụ Kiện</span>
-        <div *ngIf="isDropdownVisibleShop['Phụ Kiện']" class="dropdown-content">
-          <app-dropdown-menu></app-dropdown-menu>
+        <div *ngIf="isDropdownVisibleShop['Phụ Kiện']" class="dropdown-content" (mouseenter)="preventHideDropdown()" (mouseleave)="hideDropdown('Phụ Kiện', $event)">
+          <app-accessory></app-accessory>
         </div>
       </div>
 
-      <div class="dropdown" (mouseenter)="showDropdown('Hỗ Trợ')" (mouseleave)="hideDropdown('Hỗ Trợ')">
+      <div class="dropdown" (mouseenter)="showDropdown('Hỗ Trợ')" (mouseleave)="hideDropdown('Hỗ Trợ', $event)">
         <span>Hỗ Trợ</span>
-        <div *ngIf="isDropdownVisibleShop['Hỗ Trợ']" class="dropdown-content">
-          <app-dropdown-menu></app-dropdown-menu>
+        <div *ngIf="isDropdownVisibleShop['Hỗ Trợ']" class="dropdown-content" (mouseenter)="preventHideDropdown()" (mouseleave)="hideDropdown('Hỗ Trợ', $event)">
         </div>
       </div>
+
     </div>
     <div class="navbar-right">
       <!-- Icon tìm kiếm -->
