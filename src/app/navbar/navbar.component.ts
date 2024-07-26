@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -9,6 +10,20 @@ export class NavbarComponent {
   isNavbarVisible = false;
   isDropdownVisibleShop: { [key: string]: boolean } = {};
   active = false;
+  isSearchActive = false;
+
+  // Thêm mảng các category với title và image
+  categories = [
+    { title: 'iPad', image: 'assets/icons/shop_cart.png' },
+    { title: 'MacBook', image: 'assets/icons/shop_cart.png' },
+    { title: 'iPhone', image: 'assets/icons/shop_cart.png' }
+  ];
+
+  constructor(private router: Router) {}
+  // Lấy danh sách các tiêu đề từ các category
+  get categoryTitles(): string[] {
+    return this.categories.map(category => category.title);
+  }
 
   showDropdown(menu: string) {
     this.isDropdownVisibleShop[menu] = true;
@@ -32,4 +47,12 @@ export class NavbarComponent {
   toggleNavbar() {
     this.isNavbarVisible = !this.isNavbarVisible;
   }
+
+  toggleSearch() {
+    this.isSearchActive = !this.isSearchActive;
+  }
+  navigateToProductPage() {
+    this.router.navigate(['/product-page']);
+  }
+
 }

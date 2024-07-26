@@ -1,0 +1,82 @@
+<div class="order-page">
+    <div class="order-info">
+      <div class="combo-boxes">
+        <div class="combo-box">
+          <label for="info">Info</label>
+          <div class="dropdown">
+            <button class="dropdown-button" (click)="toggleDropdown()">
+              Select Info
+              <span class="dropdown-arrow"><img src="assets/img/expand.png" alt=""></span>
+            </button>
+            <div class="dropdown-content" [class.show]="dropdownOpen" id="dropdownContent">
+              <div class="info-item" *ngFor="let info of infoList; let i = index">
+                <input type="checkbox" class="round-checkbox" [id]="'info-' + i" name="info" (click)="selectInfo(i)">
+                <label [for]="'info-' + i">
+                  <div>{{ info.name }}</div>
+                  <div>{{ info.phone }}</div>
+                  <div>{{ info.address }}</div>
+                </label>
+              </div>
+              <button class="add-new-address" (click)="addNewAddress()">Thêm địa chỉ mới</button>
+            </div>
+          </div>
+        </div>
+        <div class="combo-box">
+          <label for="coupon">Coupon</label>
+          <div class="dropdown">
+            <button class="dropdown-button">
+              Select Coupon
+              <span class="dropdown-arrow">
+                <img src="assets/img/expand.png" alt="">
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="check-boxes">
+        <div class="check-box">
+          <input type="checkbox" id="option1" name="option1" class="round-checkbox">
+          <label for="option1">Option 1</label>
+        </div>
+        <div class="check-box">
+          <input type="checkbox" id="option2" name="option2" class="round-checkbox">
+          <label for="option2">Option 2</label>
+        </div>
+      </div>
+    </div>
+    <div class="order-items">
+      <div class="order-items-wrapper">
+        <div class="order-item-card" *ngFor="let item of orderItems">
+          <div class="item-image" [style.backgroundImage]="'url(' + item.image + ')'"></div>
+          <div class="item-info">
+            <span class="item-name">{{ item.name }}</span>
+            <div class="item-color" [style.backgroundColor]="item.color"></div>
+            <span class="item-quantity">Quantity: {{ item.quantity }}</span>
+            <span class="item-price">{{ item.price }}$</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="new-address-form" *ngIf="showForm">
+      <div class="form-container">
+        <form #addressForm="ngForm" (ngSubmit)="saveAddress(addressForm)">
+          <label for="name">Tên:</label>
+          <input type="text" id="name" name="name" ngModel>
+  
+          <label for="address">Địa chỉ:</label>
+          <input type="text" id="address" name="address" ngModel>
+  
+          <label for="phone">Số điện thoại:</label>
+          <input type="text" id="phone" name="phone" ngModel>
+  
+          <div class="map-placeholder">Google Maps sẽ hiển thị ở đây</div>
+  
+          <div class="form-actions">
+            <button type="submit" class="save-button">Lưu</button>
+            <button type="button" class="cancel-button" (click)="showForm = false">Hủy</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  

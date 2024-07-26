@@ -1,0 +1,30 @@
+<div class="product-display">
+  <div class="image-section">
+    <div class="navigation-buttons">
+      <button (click)="previousImage()" class="button_next"> <img src="assets/img/arrow_rev.png" alt="Next"></button>
+      <button (click)="nextImage()" class="button_next"> <img src="assets/img/arrow.png" alt="Next"></button>
+    </div>
+    <div class="image-container">
+      <img [src]="currentImage" alt="Product Image">
+    </div>
+    <div class="indicators">
+      <button *ngFor="let image of images[currentColor]; let i = index"
+              [class.active]="isCurrentImageIndex(i)"
+              (click)="currentImageIndex = i"></button>
+    </div>
+  </div>
+  <div class="description-section">
+    <h2>{{ productName }}</h2>
+    <p>{{ productDescription }}</p>
+    <button class="view-more">View more</button>
+    <div class="color-options">
+      <button *ngFor="let color of colors" 
+              [ngClass]="getColorClass(color)"
+              (click)="selectColor(color)"></button>
+    </div>
+    <div class="action-buttons">
+      <button class="buy-now">Mua ngay - 1000$</button>
+      <button class="add-to-cart">Thêm vào giỏ hàng</button>
+    </div>
+  </div>
+</div>

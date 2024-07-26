@@ -1,0 +1,280 @@
+.navbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white; 
+  position: relative;
+  transition: background-color 0.3s ease;
+}
+
+.navbar.active {
+  background-color: rgb(255, 255, 255); 
+}
+
+.language-selector {
+  margin-right: auto;
+}
+
+.language-button {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 40px;
+  height: 80px;
+  background-color: white;
+}
+
+.navbar-logo {
+  margin-right: 1rem;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.navbar-toggler {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+}
+
+.navbar-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  font-size: 12px;
+}
+
+.navbar-menu span {
+  margin: 0 8px;
+}
+
+.icon-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-button {
+  padding: 0;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+}
+
+.icon_search {
+  width: 30%;
+  height: 30%;
+}
+
+.icon_cart {
+  width: 24px;
+  height: 24px;
+}
+
+.signIn_btn {
+  border-radius: 40px;
+  background-color: white;
+  border: 2px solid black;
+  font-weight: bold;
+  width: 80px;
+  height: 40px;
+  margin-left: 10px;
+  font-size: 10px;
+}
+
+.search-input {
+  border: none;
+  border-bottom: 1px solid #000;
+  padding: 5px;
+  margin-right: 10px;
+  font-size: 14px;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  position: fixed;
+  left: 0;
+  width: 100vw;
+  height: auto;
+  background-color: white;
+  z-index: 1000;
+  transform: translateY(-100%);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.dropdown:hover .dropdown-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.dropdown-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.dropdown-column {
+  flex: 1;
+  padding: 16px;
+}
+
+.dropdown-header {
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.left-side-menu {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 250px;
+  height: 100%;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.categories-container {
+  display: flex;
+  overflow-x: auto;
+  padding: 10px;
+  margin-top: 0px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.categories-container::-webkit-scrollbar {
+  display: none;
+}
+
+.category-item {
+  display: inline-block;
+  text-align: center;
+  margin-right: 60px;
+}
+
+.circle {
+  border-radius: 50%;
+  border: 2px solid black;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.category-item img {
+  width: 20px;
+  height: 20px;
+}
+
+.category-item p {
+  margin-top: 5px;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .navbar-toggler {
+    display: block;
+  }
+  .categories-container {
+    display: none;
+  }
+
+  .navbar-right .icon_cart,
+  .navbar-right .signIn_btn {
+    display: none;
+  }
+
+  .navbar-menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #fff;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  }
+
+  .navbar-menu.active {
+    display: flex;
+  }
+  
+  .menu-items {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .category-titles {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .category-titles li {
+    padding: 10px 0;
+  }
+
+  .category-titles hr {
+    margin: 0;
+    border: none;
+    border-top: 1px solid #000;
+  }
+
+  .dropdown {
+    width: 100%;
+  }
+
+  .dropdown-content {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  .navbar-right {
+    flex-grow: 1;
+    justify-content: flex-end;
+  }
+
+  .navbar-logo {
+    margin-left: 0;
+  }
+
+  .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    padding: 10px;
+  }
+}

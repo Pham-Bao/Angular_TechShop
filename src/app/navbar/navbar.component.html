@@ -1,0 +1,47 @@
+<nav class="navbar" [class.active]="active">
+  <div class="navbar-container">
+    <div class="language-selector">
+      <button class="language-button">VIET ▼</button>
+    </div>
+    <div class="navbar-right">
+      <!-- Input tìm kiếm -->
+      <input *ngIf="isSearchActive" type="text" class="search-input" placeholder="Search...">
+      <!-- Icon tìm kiếm -->
+      <button (click)="toggleSearch()" class="icon-button search-button">
+        <img *ngIf="!isSearchActive" src="assets/icons/Search.png" alt="search" class="icon icon_search">
+        <i *ngIf="isSearchActive" class="fa fa-times"></i>
+      </button>
+      
+      <!-- Icon giỏ hàng -->
+      <img src="assets/icons/shop_cart.png" alt="cart" class="icon icon_cart">
+
+      <!-- Nút Sign In -->
+      <button class="signIn_btn">Sign In</button>
+
+      <!-- Nút toggle cho menu -->
+      <button class="navbar-toggler" (click)="toggleNavbar()">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </div>
+  <div *ngIf="isNavbarVisible" class="left-side-menu">
+    <div class="menu-items">
+      <button class="signIn_btn" (click)="navigateToProductPage()">Sign In</button>
+      <img src="assets/icons/shop_cart.png" alt="cart" class="icon icon_cart" style="margin-left: auto;">
+    </div>
+    <ul class="category-titles">
+      <li *ngFor="let title of categoryTitles">
+        {{ title }}
+        <hr *ngIf="title !== categoryTitles[categoryTitles.length - 1]">
+      </li>
+    </ul>
+  </div>
+  <div class="categories-container">
+    <div class="category-item" *ngFor="let category of categories">
+      <div class="circle">
+        <img src="assets/icons/shop_cart.png" [alt]="category.title">
+      </div>
+      <p>{{ category.title }}</p>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,15 @@
+<div class="carousel">
+    <div class="carousel-image" [ngStyle]="{'background-image': images[currentIndex].background}">
+      <div class="carousel-overlay"></div> <!-- Add overlay here -->
+      <div class="carousel-content">
+        <h2>{{ images[currentIndex].content }}</h2>
+        <button (click)="nextImage()" class="carousel-button">
+          <img src="assets/img/arrow.png" alt="Next">
+        </button>
+      </div>
+    </div>
+    <!-- <div class="carousel-indicators">
+      <button *ngFor="let image of images; let i = index" [class.active]="i === currentIndex" (click)="currentIndex = i"></button>
+    </div> -->
+  </div>
+  

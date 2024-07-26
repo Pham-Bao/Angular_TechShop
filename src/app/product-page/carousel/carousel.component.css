@@ -1,0 +1,87 @@
+.carousel {
+    position: relative;
+    width: 100%;
+    height: 100vh; 
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .carousel-image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .carousel-overlay {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Nền đen mờ với 50% độ mờ */
+    z-index: 0; /* Đảm bảo overlay nằm dưới nội dung */
+  }
+  
+  .carousel-content {
+    text-align: center;
+    color: #fff;
+    position: relative;
+    z-index: 1; /* Đảm bảo nội dung nằm trên overlay */
+  }
+  
+  .carousel-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  .carousel-button img {
+    width: 50px; /* Adjust the size as needed */
+    height: 50px;
+  }
+  
+  .carousel-indicators {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* Space between indicators */
+  }
+  
+  .carousel-indicators button {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: none;
+    opacity: 0.5;
+    cursor: pointer;
+  }
+  
+  .carousel-indicators button.active {
+    opacity: 1;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .carousel-content h2 {
+      font-size: 1.5rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .carousel-content h2 {
+      font-size: 1.2rem;
+    }
+  }
+  

@@ -1,0 +1,144 @@
+.cart-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+  }
+  /* Thanh cuộn tùy chỉnh */
+.cart-items-container::-webkit-scrollbar {
+    width: 8px; /* Độ rộng của thanh cuộn */
+  }
+  
+  /* Đường kẻ của thanh cuộn */
+  .cart-items-container::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Màu nền của thanh cuộn */
+  }
+  
+  /* Con trỏ của thanh cuộn */
+  .cart-items-container::-webkit-scrollbar-thumb {
+    background: #000; /* Màu con trỏ */
+    border-radius: 4px; /* Bo tròn các góc của con trỏ */
+  }
+  
+  .cart-items-container::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Màu con trỏ khi hover */
+  }
+  
+  
+  .cart-items-container {
+    max-height: 400px; /* Tăng chiều cao container để phù hợp với các phần tử lớn hơn */
+    overflow-y: auto; /* Cho phép cuộn dọc */
+    width: 100%;
+  }
+  
+  .cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    width: 100%;
+    padding: 15px; /* Tăng padding */
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .checkbox {
+    margin-right: 15px; /* Tăng khoảng cách bên phải của checkbox */
+    width: 20px; /* Tăng kích thước checkbox */
+    height: 20px; /* Tăng kích thước checkbox */
+    border-radius: 50%; /* Làm cho checkbox thành hình tròn */
+    background-color: #fff;
+    border: 1px solid #ccc;
+    appearance: none; /* Loại bỏ dấu kiểm mặc định */
+    cursor: pointer;
+  }
+  
+  .checkbox:checked {
+    background-color: #000; /* Nền đen khi tích chọn */
+  }
+  
+  .product-image {
+    width: 90px; /* Tăng kích thước ảnh sản phẩm */
+    height: 90px; /* Tăng kích thước ảnh sản phẩm */
+    background-color: #ccc;
+    margin-right: 15px; /* Tăng khoảng cách bên phải của ảnh */
+  }
+  
+  .item-details {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    align-items: flex-start;
+  }
+  
+  .item-name {
+    font-size: 18px; /* Tăng kích thước chữ của tên sản phẩm */
+    margin-bottom: 10px; /* Tăng khoảng cách bên dưới của tên sản phẩm */
+  }
+  
+  .color-circle {
+    width: 25px; /* Tăng kích thước vòng tròn màu */
+    height: 25px; /* Tăng kích thước vòng tròn màu */
+    border-radius: 50%;
+    background: linear-gradient(to bottom, #ddd, #aaa);
+    margin-bottom: 15px; /* Tăng khoảng cách bên dưới của vòng tròn màu */
+  }
+  
+  .quantity-selector {
+    display: flex;
+    align-items: center;
+  }
+  
+  .quantity-btn {
+    width: 35px; /* Tăng kích thước nút điều chỉnh số lượng */
+    height: 35px; /* Tăng kích thước nút điều chỉnh số lượng */
+    background-color: transparent; /* Loại bỏ nền */
+    border: 1px solid #000; /* Tạo border màu đen */
+    cursor: pointer;
+    font-size: 20px; /* Tăng kích thước dấu + và - */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .quantity {
+    margin: 0 15px; /* Tăng khoảng cách giữa các nút điều chỉnh và số lượng */
+    font-size: 18px; /* Tăng kích thước chữ của số lượng */
+  }
+  
+  .item-price {
+    width: 60px; /* Tăng kích thước khung giá */
+    text-align: right;
+    font-size: 18px; /* Tăng kích thước chữ của giá */
+    margin-right: 30px; /* Tăng khoảng cách giữa giá và nút xóa */
+  }
+  
+  .delete-btn {
+    background: none;
+    border: none;
+    font-size: 25px; /* Tăng kích thước chữ của nút xóa */
+    cursor: pointer;
+  }
+  
+  .total-price {
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .checkout-btn {
+    display: flex;
+    align-items: center;
+    padding: 15px 25px; /* Tăng kích thước padding của nút thanh toán */
+    border: 2px solid #000;
+    background: none;
+    cursor: pointer;
+    font-size: 22px; /* Tăng kích thước chữ của nút thanh toán */
+  }
+  
+  .arrow {
+    margin-left: 15px; /* Tăng khoảng cách bên trái của mũi tên */
+    font-size: 22px; /* Tăng kích thước chữ của mũi tên */
+  }
+  
