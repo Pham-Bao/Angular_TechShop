@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, Renderer2 } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -6,42 +6,35 @@ import { Router } from '@angular/router';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
-export class NavbarComponent {
+export class NavbarComponent implements OnInit {
   isNavbarVisible = false;
-  isDropdownVisibleShop: { [key: string]: boolean } = {};
   active = false;
   isSearchActive = false;
+  activeCategory: string | null = null;
+  activeNavItem: string | null = null;
 
-  // Thêm mảng các category với title và image
+  navItems = ['Home', 'Product', 'Cart'];
+
+  // Array of categories
   categories = [
     { title: 'iPad', image: 'assets/icons/shop_cart.png' },
-    { title: 'MacBook', image: 'assets/icons/shop_cart.png' },
-    { title: 'iPhone', image: 'assets/icons/shop_cart.png' }
+    { title: 'iPhone', image: 'assets/icons/shop_cart.png' },
+    { title: 'Head Phone', image: 'assets/icons/shop_cart.png' },
+    { title: 'Order', image: 'assets/icons/shop_cart.png' }
   ];
 
-  constructor(private router: Router) {}
-  // Lấy danh sách các tiêu đề từ các category
+  activeBgLeft = '0px';
+  activeBgWidth = '0px';
+
+  constructor(private router: Router, private renderer: Renderer2) {}
+
+  ngOnInit() {
+    this.updateActiveBg();
+  }
+
+  // Get category titles
   get categoryTitles(): string[] {
     return this.categories.map(category => category.title);
-  }
-
-  showDropdown(menu: string) {
-    this.isDropdownVisibleShop[menu] = true;
-    this.active = true;
-  }
-
-  hideDropdown(menu: string, event: MouseEvent) {
-    const relatedTarget = event.relatedTarget as HTMLElement;
-    const currentDropdown = document.querySelector('.dropdown-content');
-
-    if (currentDropdown && !currentDropdown.contains(relatedTarget)) {
-      this.isDropdownVisibleShop[menu] = false;
-      this.active = false;
-    }
-  }
-
-  preventHideDropdown() {
-    // No-op: Chỉ để ngăn chặn sự kiện mouseleave khi chuột di chuyển vào phần tử con
   }
 
   toggleNavbar() {
@@ -51,8 +44,36 @@ export class NavbarComponent {
   toggleSearch() {
     this.isSearchActive = !this.isSearchActive;
   }
-  navigateToProductPage() {
-    this.router.navigate(['/product-page']);
+
+  selectCategory(category: string) {
+    this.activeCategory = category;
+    this.isNavbarVisible = false;
   }
 
+  navigateToPage(page: string) {
+    this.activeNavItem = page;
+    switch (page) {
+      case 'home':
+        this.router.navigate(['/home-page']);
+        break;
+      case 'product':
+        this.router.navigate(['/product-page']);
+        break;
+      case 'cart':
+        this.router.navigate(['/cart-to-payment/cart']);
+        break;
+    }
+    this.updateActiveBg();
+    this.isNavbarVisible = false;
+  }
+
+  updateActiveBg() {
+    setTimeout(() => {
+      const activeElement = document.querySelector('.navbar-menu li.active') as HTMLElement;
+      if (activeElement) {
+        this.activeBgLeft = `${activeElement.offsetLeft}px`;
+        this.activeBgWidth = `${activeElement.clientWidth}px`;
+      }
+    }, 0);
+  }
 }

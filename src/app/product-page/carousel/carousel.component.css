@@ -1,87 +1,124 @@
 .carousel {
-    position: relative;
-    width: 100%;
-    height: 100vh; 
-    overflow: hidden;
-    align-items: center;
-    justify-content: center;
+  position: relative;
+  width: 100%;
+  height: 100vh; 
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+}
+
+.carousel-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+  color: #fff;
+  z-index: 1;
+}
+
+.carousel-info {
+  margin-left: 20px; 
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  h1{
+    font-size: 60px;
+    font-weight: 800;
+  }
+  h2{
+    font-size: 20px;
+    font-weight: 700;
+  }
+}
+
+.carousel-info h1, .carousel-info h2, .carousel-info p {
+  margin: 0;
+}
+
+.carousel-button {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  z-index: 2; 
+}
+
+.carousel-button img {
+  width: 50px; /* Adjust size as needed */
+  height: 50px;
+}
+
+/* Optional: Style indicators if used */
+.carousel-indicators {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px; /* Space between indicators */
+}
+
+.carousel-indicators button {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #fff;
+  border: none;
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.carousel-indicators button.active {
+  opacity: 1;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .carousel-info h1 {
+    font-size: 1.5rem;
   }
   
-  .carousel-image {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  .carousel-info h2 {
+    font-size: 1.2rem;
   }
   
-  .carousel-overlay {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Nền đen mờ với 50% độ mờ */
-    z-index: 0; /* Đảm bảo overlay nằm dưới nội dung */
+  .carousel-info p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-info h1 {
+    font-size: 1.2rem;
   }
   
-  .carousel-content {
-    text-align: center;
-    color: #fff;
-    position: relative;
-    z-index: 1; /* Đảm bảo nội dung nằm trên overlay */
+  .carousel-info h2 {
+    font-size: 1rem;
   }
   
-  .carousel-button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    outline: none;
+  .carousel-info p {
+    font-size: 0.8rem;
   }
-  
-  .carousel-button img {
-    width: 50px; /* Adjust the size as needed */
-    height: 50px;
-  }
-  
-  .carousel-indicators {
-    position: absolute;
-    bottom: 20px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px; /* Space between indicators */
-  }
-  
-  .carousel-indicators button {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: #fff;
-    border: none;
-    opacity: 0.5;
-    cursor: pointer;
-  }
-  
-  .carousel-indicators button.active {
-    opacity: 1;
-  }
-  
-  /* Responsive Styles */
-  @media (max-width: 768px) {
-    .carousel-content h2 {
-      font-size: 1.5rem;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .carousel-content h2 {
-      font-size: 1.2rem;
-    }
-  }
-  
+}

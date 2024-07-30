@@ -7,10 +7,10 @@ import { Component, HostListener } from '@angular/core';
 })
 export class CarouselComponent {
   images = [
-    { background: 'url(assets/img/iphone_test/iphone_black/chip_black_1.jpg)', content: 'Nội dung ảnh 1' },
-    { background: 'url(assets/img/iphone_test/iphone_black/chip_black_1.jpg)', content: 'Nội dung ảnh 2' },
-    { background: 'url(assets/img/iphone_test/iphone_black/chip_black_1.jpg)', content: 'Nội dung ảnh 3' },
-    { background: 'url(assets/img/iphone_test/iphone_black/chip_black_1.jpg)', content: 'Nội dung ảnh 4' },
+    { background: 'url(assets/img/iphone_test/iphone_black/chip_black_1.jpg)', title: 'Title 1', subtitle: 'Subtitle 1', content: 'Content 1' },
+    { background: 'url(assets/img/iphone_test/iphone_black/chip_black_1.jpg)', title: 'Title 2', subtitle: 'Subtitle 2', content: 'Content 2' },
+    { background: 'url(assets/img/iphone_test/iphone_black/chip_black_1.jpg)', title: 'Title 3', subtitle: 'Subtitle 3', content: 'Content 3' },
+    { background: 'url(assets/img/iphone_test/iphone_black/chip_black_1.jpg)', title: 'Title 4', subtitle: 'Subtitle 4', content: 'Content 4' },
   ];
   
   currentIndex = 0;

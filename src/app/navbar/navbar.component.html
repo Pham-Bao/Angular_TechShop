@@ -1,47 +1,73 @@
-<nav class="navbar" [class.active]="active">
-  <div class="navbar-container">
-    <div class="language-selector">
-      <button class="language-button">VIET ▼</button>
+<nav class="navbar">
+  <div class="navbar-top">
+    <div class="navbar-left">
+      <button class="toggle-button" (click)="toggleNavbar()">
+        <i class="fa fa-bars"></i>
+      </button>
+      <ul class="navbar-menu">
+        <li [class.active]="activeNavItem === 'home'">
+          <a (click)="navigateToPage('home')">Home Page</a>
+        </li>
+        <li [class.active]="activeNavItem === 'product'">
+          <a (click)="navigateToPage('product')">Product Page</a>
+        </li>
+        <li [class.active]="activeNavItem === 'cart'">
+          <a (click)="navigateToPage('cart')">Cart Page</a>
+        </li>
+      </ul>
     </div>
     <div class="navbar-right">
-      <!-- Input tìm kiếm -->
-      <input *ngIf="isSearchActive" type="text" class="search-input" placeholder="Search...">
-      <!-- Icon tìm kiếm -->
+      <input *ngIf="isSearchActive" type="text" class="search-input active" placeholder="Search..." [class.active]="isSearchActive">
       <button (click)="toggleSearch()" class="icon-button search-button">
         <img *ngIf="!isSearchActive" src="assets/icons/Search.png" alt="search" class="icon icon_search">
         <i *ngIf="isSearchActive" class="fa fa-times"></i>
       </button>
-      
-      <!-- Icon giỏ hàng -->
       <img src="assets/icons/shop_cart.png" alt="cart" class="icon icon_cart">
-
-      <!-- Nút Sign In -->
       <button class="signIn_btn">Sign In</button>
+    </div>
+  </div>
+  <div class="navbar-divider"></div>
+  <div class="navbar-bottom">
+    <div class="navbar-logo-container">
+      <!-- <img src="assets/icons/logo.png" alt="Tech Shop Logo" class="navbar-logo"> -->
+      <span class="tech-shop-title">TECH SHOP</span>
+    </div>
+    <div class="categories-container">
+      <ul class="categories">
+        <li *ngFor="let category of categories" [class.active]="activeCategory === category.title">
+          <a (click)="selectCategory(category.title)">{{ category.title }}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
 
-      <!-- Nút toggle cho menu -->
-      <button class="navbar-toggler" (click)="toggleNavbar()">
-        <i class="fa-solid fa-bars"></i>
-      </button>
+  <div class="toggle-menu" [class.active]="isNavbarVisible">
+    <button class="close-button" (click)="toggleNavbar()">X</button>
+    <div class="toggle-menu-section">
+      <h3 class="toggle-menu-title">Pages</h3>
+      <ul class="toggle-menu-nav">
+        <li [class.active]="activeNavItem === 'home'">
+          <a (click)="navigateToPage('home')">Home Page</a>
+        </li>
+        <li [class.active]="activeNavItem === 'product'">
+          <a (click)="navigateToPage('product')">Product Page</a>
+        </li>
+        <li [class.active]="activeNavItem === 'cart'">
+          <a (click)="navigateToPage('cart')">Cart Page</a>
+        </li>
+      </ul>
     </div>
-  </div>
-  <div *ngIf="isNavbarVisible" class="left-side-menu">
-    <div class="menu-items">
-      <button class="signIn_btn" (click)="navigateToProductPage()">Sign In</button>
-      <img src="assets/icons/shop_cart.png" alt="cart" class="icon icon_cart" style="margin-left: auto;">
+    <div class="toggle-menu-section">
+      <h3 class="toggle-menu-title">Categories</h3>
+      <ul class="toggle-menu-categories">
+        <li *ngFor="let category of categories" [class.active]="activeCategory === category.title">
+          <a (click)="selectCategory(category.title)">{{ category.title }}</a>
+        </li>
+      </ul>
     </div>
-    <ul class="category-titles">
-      <li *ngFor="let title of categoryTitles">
-        {{ title }}
-        <hr *ngIf="title !== categoryTitles[categoryTitles.length - 1]">
-      </li>
-    </ul>
-  </div>
-  <div class="categories-container">
-    <div class="category-item" *ngFor="let category of categories">
-      <div class="circle">
-        <img src="assets/icons/shop_cart.png" [alt]="category.title">
-      </div>
-      <p>{{ category.title }}</p>
+    <div class="toggle-menu-bottom">
+      <img src="assets/icons/shop_cart.png" alt="cart" class="icon icon_cart">
+      <button class="signIn_btn">Sign In</button>
     </div>
   </div>
 </nav>

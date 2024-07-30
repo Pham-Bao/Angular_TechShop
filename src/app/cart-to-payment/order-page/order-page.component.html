@@ -2,11 +2,11 @@
     <div class="order-info">
       <div class="combo-boxes">
         <div class="combo-box">
-          <label for="info">Info</label>
+          <label for="info" style="font-weight: 900;">Info</label>
           <div class="dropdown">
             <button class="dropdown-button" (click)="toggleDropdown()">
               Select Info
-              <span class="dropdown-arrow"><img src="assets/img/expand.png" alt=""></span>
+              <span class="dropdown-arrow"><img style="width: 30px; height: 30px;" src="assets/img/expand.png" alt=""></span>
             </button>
             <div class="dropdown-content" [class.show]="dropdownOpen" id="dropdownContent">
               <div class="info-item" *ngFor="let info of infoList; let i = index">
@@ -22,12 +22,12 @@
           </div>
         </div>
         <div class="combo-box">
-          <label for="coupon">Coupon</label>
+          <label for="coupon" style="font-weight: 900;">Coupon</label>
           <div class="dropdown">
             <button class="dropdown-button">
               Select Coupon
               <span class="dropdown-arrow">
-                <img src="assets/img/expand.png" alt="">
+                <img src="assets/img/expand.png" style="width: 30px; height: 30px;" alt="">
               </span>
             </button>
           </div>
@@ -45,18 +45,27 @@
       </div>
     </div>
     <div class="order-items">
-      <div class="order-items-wrapper">
-        <div class="order-item-card" *ngFor="let item of orderItems">
-          <div class="item-image" [style.backgroundImage]="'url(' + item.image + ')'"></div>
-          <div class="item-info">
-            <span class="item-name">{{ item.name }}</span>
-            <div class="item-color" [style.backgroundColor]="item.color"></div>
-            <span class="item-quantity">Quantity: {{ item.quantity }}</span>
-            <span class="item-price">{{ item.price }}$</span>
-          </div>
-        </div>
-      </div>
+      <table class="order-items-table">
+        <thead>
+          <tr>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Color</th>
+            <th>Quantity</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of orderItems">
+            <td>{{ item.name }}</td>
+            <td><div class="item-color" [style.backgroundColor]="item.color"></div></td>
+            <td>{{ item.quantity }}</td>
+            <td>{{ item.price }}$</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
+  
     <div class="new-address-form" *ngIf="showForm">
       <div class="form-container">
         <form #addressForm="ngForm" (ngSubmit)="saveAddress(addressForm)">

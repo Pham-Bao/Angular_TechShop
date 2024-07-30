@@ -35,11 +35,13 @@ export class OrderPageComponent {
           checkbox.checked= true;
           if (checkbox.parentElement) {
             checkbox.parentElement.style.backgroundColor = '#000';
+            checkbox.parentElement.style.color = '#fff';
           }
         } else {
           checkbox.checked = false;
           if (checkbox.parentElement) {
-            checkbox.parentElement.style.backgroundColor = '';
+            checkbox.parentElement.style.backgroundColor = '#fff';
+            checkbox.parentElement.style.color = '#000';
           }
         }
       }

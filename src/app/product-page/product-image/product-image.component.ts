@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
+
 type Color = 'red' | 'blue' | 'green' | 'yellow';
 
 @Component({
@@ -6,20 +7,41 @@ type Color = 'red' | 'blue' | 'green' | 'yellow';
   templateUrl: './product-image.component.html',
   styleUrls: ['./product-image.component.css']
 })
-export class ProductImageComponent {
-  productName = 'Item Name';
-  productDescription = 'This is a product description.';
+export class ProductImageComponent implements OnInit {
+  productName = 'Iphone 14 Pro Max';
+  productDescription = 'Iphone14 is the hall of the beauty and smart';
   colors: Color[] = ['red', 'blue', 'green', 'yellow'];
-  
+  selectedStorage: string = '128GB';
+
   images: { [key in Color]: string[] } = {
-    red: ['assets/img/iphone_test/iphone_black/img1_black.png', 'assets/img/iphone_test/iphone_black/img2_black.png', 'assets/img/iphone_test/iphone_black/img3_black.png',],
-    blue: ['assets/img/iphone_test/iphone_black/img1_black.png', 'assets/img/iphone_test/iphone_black/img2_black.png', 'assets/img/iphone_test/iphone_black/img3_black.png',],
-    green:['assets/img/iphone_test/iphone_black/img1_black.png', 'assets/img/iphone_test/iphone_black/img2_black.png', 'assets/img/iphone_test/iphone_black/img3_black.png',],
-    yellow: ['assets/img/iphone_test/iphone_black/img1_black.png', 'assets/img/iphone_test/iphone_black/img2_black.png', 'assets/img/iphone_test/iphone_black/img3_black.png',],
+    red: [
+      'assets/img/iphone_test/iphone_black/img1_black.png',
+      'assets/img/iphone_test/iphone_black/img2_black.png',
+      'assets/img/iphone_test/iphone_black/img3_black.png',
+    ],
+    blue: [
+      'assets/img/iphone_test/iphone_black/img1_black.png',
+      'assets/img/iphone_test/iphone_black/img2_black.png',
+      'assets/img/iphone_test/iphone_black/img3_black.png',
+    ],
+    green: [
+      'assets/img/iphone_test/iphone_black/img1_black.png',
+      'assets/img/iphone_test/iphone_black/img2_black.png',
+      'assets/img/iphone_test/iphone_black/img3_black.png',
+    ],
+    yellow: [
+      'assets/img/iphone_test/iphone_black/img1_black.png',
+      'assets/img/iphone_test/iphone_black/img2_black.png',
+      'assets/img/iphone_test/iphone_black/img3_black.png',
+    ],
   };
 
   currentColor: Color = 'red';
   currentImageIndex = 0;
+
+  ngOnInit() {
+    // Any initialization logic
+  }
 
   get currentImage(): string {
     return this.images[this.currentColor][this.currentImageIndex];
@@ -48,5 +70,20 @@ export class ProductImageComponent {
 
   getColorClass(color: Color): string {
     return `${color} ${this.isSelected(color) ? 'selected' : ''}`;
+  }
+
+  selectStorage(storage: string) {
+    this.selectedStorage = storage;
+  }
+
+  // Add swipe event listeners
+  @HostListener('swipeleft', ['$event'])
+  onSwipeLeft(event: Event) {
+    this.nextImage();
+  }
+
+  @HostListener('swiperight', ['$event'])
+  onSwipeRight(event: Event) {
+    this.previousImage();
   }
 }

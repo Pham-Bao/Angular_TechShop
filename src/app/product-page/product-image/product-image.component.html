@@ -16,15 +16,19 @@
   <div class="description-section">
     <h2>{{ productName }}</h2>
     <p>{{ productDescription }}</p>
-    <button class="view-more">View more</button>
+    <div class="view-more">View more</div>
+    <div class="storage-options">
+      <span [class.selected]="selectedStorage === '128GB'" (click)="selectStorage('128GB')">128GB</span>
+      <span [class.selected]="selectedStorage === '512GB'" (click)="selectStorage('512GB')">512GB</span>
+    </div>
     <div class="color-options">
       <button *ngFor="let color of colors" 
               [ngClass]="getColorClass(color)"
               (click)="selectColor(color)"></button>
     </div>
     <div class="action-buttons">
-      <button class="buy-now">Mua ngay - 1000$</button>
-      <button class="add-to-cart">Thêm vào giỏ hàng</button>
+      <button class="buy-now">Buy now - 1000$</button>
+      <button class="add-to-cart">Add to cart</button>
     </div>
   </div>
 </div>

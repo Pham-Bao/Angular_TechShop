@@ -24,9 +24,42 @@
 .image-section, .description-section {
   flex: 1;
   min-width: 300px;
-  text-align: center;
   position: relative; /* Đảm bảo nội dung nằm trên overlay */
   z-index: 1; /* Đảm bảo nội dung nằm trên overlay */
+}
+
+.description-section {
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: left; 
+  h2{
+    font-weight:900 ;
+    font-size: 100px;
+  }
+  p{
+    font-size: 10px;
+    font-weight: 300;
+  }
+  h3{
+    font-size: 50px;
+    font-weight: bold;
+  }
+}
+
+.breadcrumb {
+  font-size: 14px; /* Font chữ nhỏ */
+  color: #000; /* Màu đen */
+  margin-bottom: 10px; /* Khoảng cách dưới để tách ra khỏi nội dung khác */
+  text-align: left; /* Căn lề trái */
+}
+
+.breadcrumb a {
+  text-decoration: none; /* Không gạch chân */
+  color: #000; /* Màu đen */
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline; /* Gạch chân khi hover */
 }
 
 .button_next {
@@ -100,22 +133,27 @@
 .indicators button.active {
   opacity: 1;
 }
-
-.description-section {
-  padding: 20px;
-  box-sizing: border-box;
+.view-more{
+  display: inline-block;
+  border: none;
+  background: none;
+  color: #fff;
+  cursor: pointer;
+  z-index: 1;
+  font-size: 10px;
+  font-weight: 800;
 }
-
-.view-more, .buy-now, .add-to-cart {
+ .buy-now, .add-to-cart {
   display: inline-block;
   margin: 10px;
   padding: 10px 20px;
   border: 2px solid #fff;
-  border-radius: 40px;
   background: none;
   color: #fff;
   cursor: pointer;
-  z-index: 1; /* Đảm bảo các nút nằm trên overlay */
+  z-index: 1;
+  font-size: 20px;
+  font-weight: 600;
 }
 
 .color-options {
@@ -129,26 +167,27 @@
   border-radius: 50%;
   margin: 0 5px;
   cursor: pointer;
-  background: linear-gradient(to bottom, #ff0000, #800000); /* Thay đổi màu gradient theo màu sắc */
+  background: linear-gradient(to bottom, #ff0000, #800000); 
   outline: none;
   margin-right: 3%;
   z-index: 1; 
+  margin-top: 15%;
 }
 
 .color-options button.selected {
-  border: 2px solid #fff;
+  border: 2px solid #ffffff70;
 }
 
 .color-options button.red {
-  background: linear-gradient(to bottom, #ff0000, #800000);
+  background: linear-gradient(to bottom, #000000, #800000);
 }
 
 .color-options button.blue {
-  background: linear-gradient(to bottom, #0000ff, #000080);
+  background: linear-gradient(to bottom, #4c00fd, #17004b);
 }
 
 .color-options button.green {
-  background: linear-gradient(to bottom, #00ff00, #008000);
+  background: linear-gradient(to bottom, #a502d6, #1f0a27);
 }
 
 .color-options button.yellow {
@@ -157,9 +196,43 @@
 
 .action-buttons {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   flex-wrap: wrap;
-  z-index: 1; /* Đảm bảo nút hành động nằm trên overlay */
+  z-index: 1; 
+}
+.storage-options {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.storage-options span {
+  padding: 0 10px;
+  cursor: pointer;
+  position: relative;
+}
+
+.storage-options span::after {
+  content: "";
+  position: absolute;
+  right: -10px;
+}
+
+.storage-options span:last-child::after {
+  content: "";
+}
+
+.storage-options .selected {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.storage-options span {
+  transition: transform 0.3s ease-in-out;
+}
+
+.storage-options span:hover {
+  transform: scale(1.1);
 }
 
 /* Responsive Styles */
@@ -168,13 +241,15 @@
     flex-direction: column;
     align-items: center;
   }
-
   .image-section, .description-section {
     min-width: unset;
   }
 
   .image-section {
     margin-bottom: 20px;
+  }
+  .button_next{
+    display: none;
   }
 }
 
@@ -187,5 +262,8 @@
   .color-options button {
     width: 30px;
     height: 30px;
+  }
+  .button_next{
+    display: none;
   }
 }
