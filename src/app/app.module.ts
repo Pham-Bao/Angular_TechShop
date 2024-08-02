@@ -26,6 +26,10 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { ProductImageComponent } from './product-page/product-image/product-image.component';
 import { CarouselComponent } from './product-page/carousel/carousel.component';
 import { CartToPaymentModule } from './cart-to-payment/cart-to-payment.module';
+import { VideoIphoneComponent } from './product-page/video-iphone/video-iphone.component';
+import { LearnIphoneComponent } from './product-page/learn-iphone/learn-iphone.component';
+import { ProductIphoneComponent } from './product-page/product-iphone/product-iphone.component';
+import { AccessoriesForIphoneComponent } from './product-page/accessories-for-iphone/accessories-for-iphone.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,6 +55,10 @@ import { CartToPaymentModule } from './cart-to-payment/cart-to-payment.module';
     HomePageComponent,
     ProductImageComponent,
     CarouselComponent,
+    VideoIphoneComponent,
+    LearnIphoneComponent,
+    ProductIphoneComponent,
+    AccessoriesForIphoneComponent,
   ],
   imports: [
     BrowserModule,

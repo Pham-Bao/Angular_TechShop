@@ -1,0 +1,33 @@
+.responsive-video {
+    width: 100%;
+    transition: width 0.3s ease, border-radius 0.3s ease;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Đảm bảo video luôn lấp đầy container */
+  }
+  
+  .responsive-video.shrink1 {
+    width: 97%;
+    border-radius: 10px;
+  }
+  
+  .responsive-video.shrink2 {
+    width: 90%;
+    border-radius: 15px;
+  }
+  
+  .responsive-video.shrink3 {
+    width: 83%;
+    border-radius: 20px;
+  }
+  .video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+    height: 80%; /* hoặc giá trị cụ thể như 400px nếu muốn cố định */
+    overflow: hidden; /* Ẩn phần video vượt quá chiều cao */
+    position: relative; /* Để căn chỉnh video bên trong */
+  }
+  

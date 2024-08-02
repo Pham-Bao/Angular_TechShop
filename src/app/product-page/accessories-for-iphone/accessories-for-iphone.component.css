@@ -1,0 +1,52 @@
+.card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .card-text {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  a.text-primary {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  a.text-primary:hover {
+    text-decoration: underline;
+  }
+  
+  .card {
+    background-color: #f5f5f7;
+    border-radius: 0.5rem; /* Add rounded corners */
+    text-align: center; /* Center text inside the card */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%; /* Ensure card takes full height of its parent */
+  }
+  
+  .card-img {
+    width: 100%; /* Make the image width equal to the card width */
+  }
+  
+  .container-fluid {
+    background-color: #ffffff;
+    padding: 0 2rem; /* Optional: Add padding to the sides */
+  }
+  
+  h2.text-center {
+    margin-bottom: 2rem;
+  }
+  
+  .row {
+    display: flex;
+    align-items: stretch; /* Ensure all cards are of equal height */
+  }
+  
+  .col-md-5 {
+    display: flex;
+    align-items: stretch; /* Ensure the columns stretch to fit their content */
+  }
+  

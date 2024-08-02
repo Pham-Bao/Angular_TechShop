@@ -1,0 +1,300 @@
+.container {
+    display: flex;
+    flex-direction: column; /* Xếp chồng các phần tử theo chiều dọc */
+    align-items: center;
+    gap: 68px; /* Khoảng cách giữa các phần tử */
+    padding: 20px;
+}
+
+/* Phần tử chứa ảnh nền và bo góc */
+.background-image {
+    width: 100%; /* Hoặc 100% nếu muốn mở rộng theo chiều ngang của container */
+    height: 540px;
+    background-image: url('src/assets/img/bgr1.jpg'); /* Đường dẫn tới ảnh của bạn */
+    background-size: cover; /* Đảm bảo ảnh lấp đầy phần tử */
+    background-position: center; /* Canh giữa ảnh */
+    border-radius: 20px; /* Thay đổi giá trị này theo yêu cầu */
+    overflow: hidden; /* Đảm bảo bo góc không làm lộ phần dư */
+    position: relative; /* Để căn chỉnh nội dung bên trong */
+    display: flex;
+    align-items: center; /* Căn giữa theo chiều dọc */
+    transition: transform 0.3s ease; /* Hiệu ứng chuyển đổi khi hover */
+}
+
+/* Nội dung văn bản */
+.text-content {
+    text-align: center;
+    color: white; /* Hoặc màu sắc khác phù hợp với thiết kế của bạn */
+    padding: 84px; /* Khoảng cách giữa nội dung và các lề của ảnh nền */
+    box-sizing: border-box; /* Đảm bảo padding không làm tăng kích thước phần tử */
+}
+
+.headline, .subheadline {
+    font-weight: bold; /* Chữ in đậm */
+    color: white; /* Màu sắc chữ */
+    margin: 0; /* Loại bỏ margin mặc định để căn chỉnh chính xác */
+}
+
+.headline {
+    font-size: 28px; /* Kích thước chữ */
+    line-height: 1.02; /* Khoảng cách giữa các dòng chữ */
+}
+
+.subheadline {
+    font-size: 28px; /* Kích thước chữ */
+    line-height: 1.02; /* Khoảng cách giữa các dòng chữ */
+    margin-top: 10px; /* Khoảng cách giữa các đoạn văn bản */
+}
+
+.btn {
+    margin-top: 24px; /* Khoảng cách giữa văn bản và nút */
+    padding: 10px 20px;
+    border-radius: 50px; /* Bo góc nút */
+    text-decoration: none; /* Xóa gạch chân của liên kết */
+}
+
+.btn-light {
+    background-color: #f8f9fa; /* Màu nền nút */
+    color: #343a40; /* Màu chữ trên nút */
+}
+
+.background-image:hover {
+    transform: scale(1.01); /* Phóng to phần tử lên 10% */
+}
+
+/* cái thứ 2 */
+.card-container {
+    display: flex;
+    gap: 20px;
+    scroll-behavior: smooth;
+    overflow-x: auto; /* Cho phép cuộn ngang */
+    -webkit-overflow-scrolling: touch; /* Hỗ trợ cuộn mượt trên iOS */
+    padding-bottom: 20px; /* Đảm bảo không bị che phủ bởi thanh cuộn */
+}
+
+.card-container::-webkit-scrollbar {
+    display: none; /* Ẩn thanh cuộn trên các trình duyệt Webkit (Chrome, Safari) */
+}
+  
+.card-container {
+    -ms-overflow-style: none;  /* Ẩn thanh cuộn trên Internet Explorer và Edge */
+    scrollbar-width: none;  /* Ẩn thanh cuộn trên Firefox */
+}
+
+.card-wrapper:hover .scroll-btn {
+    display: flex;
+}
+
+.card {
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    min-width: 300px; /* Đặt chiều rộng tối thiểu cho thẻ để đảm bảo chúng xếp hàng ngang */
+    position: relative;
+    text-align: left;
+}
+
+.icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 20px;
+}
+
+.icon2 {
+    width: 48px;
+    height: 38px;
+    margin-bottom: 20px;
+}
+
+.card h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #333;
+    font-size: 16px;
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+.add-button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background-color: #343a40;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* cái thứ 2 */
+.product-wrapper {
+    position: relative;
+}
+
+.product-card {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+    border-radius: 14px;
+    min-width: 320px; /* Đặt chiều rộng tối thiểu cho thẻ */
+    height: auto; /* Đặt chiều cao cho thẻ */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.product-card .text-container .text-container {
+    padding: 18px;
+    border-radius: 10px;
+}
+
+.product-card h4, .product-card h2, .product-card p {
+    margin: 0;
+}
+
+.product-card h4 {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.product-card h2 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.product-card p {
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.scroll-btn {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1;
+    display: none; /* Ẩn nút cuộn mặc định */
+}
+
+.left-btn {
+    left: 10px;
+}
+
+.right-btn {
+    right: 10px;
+}
+
+.product-wrapper:hover .scroll-btn {
+    display: flex; /* Hiển thị nút cuộn khi hover vào product-wrapper */
+}
+/* card product*/
+
+.product-card {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .image-container img {
+    max-width: 100%;
+  }
+  
+  .product-info {
+    margin-top: 20px;
+  }
+  
+  .product-info h2 {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .product-info p {
+    margin: 5px 0;
+  }
+  
+  .button-group {
+    margin-top: 20px;
+  }
+  
+  .btn {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .btn-secondary {
+    background-color: #6c757d;
+    color: white;
+  }
+  
+  .product-details {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .feature {
+    text-align: center;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  
+  .feature img {
+    max-width: 50px;
+    margin-bottom: 10px;
+  }
+  
+  .color-options {
+    display: flex;
+    justify-content: center;
+    margin: 8px 0;
+  }
+  
+  .color-option {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin: 0 4px;
+    border: 1px solid #ccc;
+  }
+
+  a {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Ensure link color is the same as surrounding text */
+  }
+  
+  a:hover {
+    text-decoration: underline; /* Underline on hover */
+  }
+  
