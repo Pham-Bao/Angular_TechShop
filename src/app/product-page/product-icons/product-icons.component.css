@@ -1,0 +1,33 @@
+.product-icons {
+    width: 70%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto; /* Căn giữa container */
+  }
+  
+  
+  .icon-item {
+    text-align: center;
+    margin: 10px;
+  }
+  
+  .icon-item img {
+    display: block;
+    margin: 0 auto 2px;
+    width: 48px; /* Điều chỉnh kích thước theo ý muốn */
+  }
+  
+  .icon-item p {
+    margin: 0;
+  }
+  
+  .icon-item a {
+    color: orange;
+    text-decoration: none;
+  }
+  
+  .icon-item a:hover {
+    text-decoration: underline;
+  }
+  

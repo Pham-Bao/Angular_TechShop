@@ -30,6 +30,7 @@ import { VideoIphoneComponent } from './product-page/video-iphone/video-iphone.c
 import { LearnIphoneComponent } from './product-page/learn-iphone/learn-iphone.component';
 import { ProductIphoneComponent } from './product-page/product-iphone/product-iphone.component';
 import { AccessoriesForIphoneComponent } from './product-page/accessories-for-iphone/accessories-for-iphone.component';
+import { ProductIconsComponent } from './product-page/product-icons/product-icons.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -59,6 +60,7 @@ import { AccessoriesForIphoneComponent } from './product-page/accessories-for-ip
     LearnIphoneComponent,
     ProductIphoneComponent,
     AccessoriesForIphoneComponent,
+    ProductIconsComponent,
   ],
   imports: [
     BrowserModule,
