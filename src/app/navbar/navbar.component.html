@@ -1,4 +1,4 @@
-<!--<nav class="navbar">
+<nav class="navbar">
   <div class="navbar-top">
     <div class="navbar-left">
       <button class="toggle-button" (click)="toggleNavbar()">
@@ -6,13 +6,13 @@
       </button>
       <ul class="navbar-menu">
         <li [class.active]="activeNavItem === 'home'">
-          <a (click)="navigateToPage('home')">Home Page</a>
+          <a (click)="navigateToPage('home')">Trang Chủ</a>
         </li>
         <li [class.active]="activeNavItem === 'product'">
-          <a (click)="navigateToPage('product')">Product Page</a>
+          <a (click)="navigateToPage('product')">Sản phẩm</a>
         </li>
         <li [class.active]="activeNavItem === 'cart'">
-          <a (click)="navigateToPage('cart')">Cart Page</a>
+          <a (click)="navigateToPage('cart')">Đơn hàng</a>
         </li>
       </ul>
     </div>
@@ -29,16 +29,10 @@
   <div class="navbar-divider"></div>
   <div class="navbar-bottom">
     <div class="navbar-logo-container">
-      <!-- <img src="assets/icons/logo.png" alt="Tech Shop Logo" class="navbar-logo"> 
+      <!-- <img src="assets/icons/logo.png" alt="Tech Shop Logo" class="navbar-logo"> -->
       <span class="tech-shop-title">TECH SHOP</span>
     </div>
-    <div class="categories-container">
-      <ul class="categories">
-        <li *ngFor="let category of categories" [class.active]="activeCategory === category.title">
-          <a (click)="selectCategory(category.title)">{{ category.title }}</a>
-        </li>
-      </ul>
-    </div>
+
   </div>
 
   <div class="toggle-menu" [class.active]="isNavbarVisible">
@@ -71,4 +65,3 @@
     </div>
   </div>
 </nav>
--->

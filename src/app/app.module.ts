@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { CarouselModule } from 'ngx-owl-carousel-o';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; // Import BrowserAnimationsModule
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -31,6 +34,10 @@ import { LearnIphoneComponent } from './product-page/learn-iphone/learn-iphone.c
 import { ProductIphoneComponent } from './product-page/product-iphone/product-iphone.component';
 import { AccessoriesForIphoneComponent } from './product-page/accessories-for-iphone/accessories-for-iphone.component';
 import { ProductIconsComponent } from './product-page/product-icons/product-icons.component';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { NavProductDetailComponent } from './product-detail/nav-product-detail/nav-product-detail.component';
+import { VideoProductComponent } from './product-detail/video-product/video-product.component';
+import { SlideVideoProductComponent } from './product-detail/slide-video-product/slide-video-product.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -61,11 +68,19 @@ import { ProductIconsComponent } from './product-page/product-icons/product-icon
     ProductIphoneComponent,
     AccessoriesForIphoneComponent,
     ProductIconsComponent,
+    ProductDetailComponent,
+    NavProductDetailComponent,
+    VideoProductComponent,
+    SlideVideoProductComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     CartToPaymentModule,
+    CarouselModule,
+    BrowserAnimationsModule, // Thêm BrowserAnimationsModule vào imports
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]

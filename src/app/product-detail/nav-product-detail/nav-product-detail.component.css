@@ -1,0 +1,75 @@
+.product-navigation-container {
+  display: flex;
+  background-color: rgba(29, 29, 29, 0.85); /* Màu nền với độ trong suốt */
+  position: fixed;
+  top: -100px; /* Bắt đầu ở phía trên màn hình */
+  width: 100%;
+  height: 52px;
+  z-index: 1000;
+  border-bottom: 1px solid #444444;
+  transition: top 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Thêm chuyển đổi mượt mà */
+  opacity: 0; /* Bắt đầu với độ trong suốt */
+}
+
+.product-navigation-container.visible {
+  top: 0; /* Khi hiển thị, đặt vị trí lên trên cùng */
+  opacity: 5; /* Đặt độ trong suốt thành hoàn toàn hiển thị */
+}
+  .product-title h5 {
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .nav .nav-link {
+    margin-right: 15px;
+    color: #d1d1d6; /* Màu xám trắng */
+    position: relative;
+    transition: color 0.3s;
+  }
+  
+  .nav .nav-link:hover {
+    color: #ffffff; /* Màu trắng khi hover */
+  }
+  
+  .nav .nav-link.active {
+    color: #ffffff; /* Màu trắng khi active */
+  }
+  
+  .nav .nav-link.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 3px; /* Chiều cao của đường kẻ ngang */
+    background-color: #d1d1d6; /* Màu xám */
+  }
+  .text{
+    color: #6d6d7c;
+  }
+  .text :hover{
+    color: rgb(255, 255, 255);
+  }
+
+  .btn-mua {
+    display: inline-block;
+    color: #ffffff;
+    background-color: #0071e3;
+    border: none;
+    border-radius: 50px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 0.7rem; /* Giảm kích thước font nếu cần */
+    height: 32px;
+
+  }
+  
+  .btn-mua:hover {
+    background-color: #0071e3;
+  }
+  
+  .btn-mua:focus, .btn-mua:active {
+    background-color: #0071e3;
+    outline: none;
+    box-shadow: none;
+  }

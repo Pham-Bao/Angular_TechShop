@@ -2,7 +2,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  background-image: url('src/assets/img/product_bgr.jpg');
+  background-color: #000000;
   color: #fff;
   background-size: cover; /* Đảm bảo hình nền bao phủ toàn bộ vùng chứa */
   background-repeat: no-repeat; /* Ngăn không cho hình nền lặp lại */

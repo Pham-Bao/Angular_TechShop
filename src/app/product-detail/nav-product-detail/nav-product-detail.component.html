@@ -1,0 +1,22 @@
+<div class="product-navigation-container" [ngClass]="{ 'visible': isSticky }">
+   <div class="container d-flex justify-content-between align-items-center">
+       <div class="product-title">
+           <h5 class="mb-0 text-white">iPhone 15 Pro</h5>
+       </div>
+       <nav class="nav">
+           <a class="nav-link text" 
+              href="#" 
+              [ngClass]="{ 'active': activeLink === 'overview' }" 
+              (click)="setActiveLink('overview')">Tổng Quan</a>
+           <a class="nav-link text" 
+              href="#" 
+              [ngClass]="{ 'active': activeLink === 'android-to-iphone' }" 
+              (click)="setActiveLink('android-to-iphone')">Chuyển Từ Android Sang iPhone</a>
+           <a class="nav-link text" 
+              href="#" 
+              [ngClass]="{ 'active': activeLink === 'specs' }" 
+              (click)="setActiveLink('specs')">Thông Số Kỹ Thuật</a>
+           <a class="nav-link btn-mua  text-white mt-1" href="#">Mua</a>
+       </nav>
+   </div>
+</div>
