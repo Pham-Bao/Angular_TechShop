@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { CarouselModule } from 'ngx-owl-carousel-o';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; // Import BrowserAnimationsModule
 
 
@@ -77,10 +76,6 @@ import { SlideVideoProductComponent } from './product-detail/slide-video-product
     BrowserModule,
     AppRoutingModule,
     CartToPaymentModule,
-    CarouselModule,
-    BrowserAnimationsModule, // Thêm BrowserAnimationsModule vào imports
-
-
   ],
   providers: [],
   bootstrap: [AppComponent]
