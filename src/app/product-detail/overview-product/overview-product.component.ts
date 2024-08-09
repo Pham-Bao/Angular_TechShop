@@ -40,4 +40,17 @@ export class OverviewProductComponent implements AfterViewInit {
     img.classList.remove('show');
     setTimeout(() => img.classList.add('show'), 0); 
   }
+
+  isExpanded = false;
+  isRippleActive = false;
+
+  toggleExpand() {
+    this.isRippleActive = true;
+
+    // Kích hoạt hiệu ứng ripple
+    setTimeout(() => {
+      this.isRippleActive = false;
+      this.isExpanded = !this.isExpanded;
+    }, 400); // Thời gian ripple là 400ms
+  }
 }

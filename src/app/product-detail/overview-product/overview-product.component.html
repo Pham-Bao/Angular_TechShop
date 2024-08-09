@@ -17,4 +17,15 @@
     </div>
     </div>
   </div>
+  <div class="container-btn">
+    <button class="custom-button" [class.expanded]="isExpanded" (click)="toggleExpand()">
+      <div class="ripple" *ngIf="isRippleActive"></div>
+      <span *ngIf="isExpanded" class="content">Tìm hiểu thêm về A17 Pro</span>
+      <span class="icon">+</span>
+    </button>
+  </div>
+  
+  
+  
+  
   

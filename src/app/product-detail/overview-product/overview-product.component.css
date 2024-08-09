@@ -81,3 +81,109 @@
     align-items: center; /* Căn giữa các nút màu theo chiều dọc */
     justify-content: center; /* Căn giữa các nút màu theo chiều ngang */
   }
+
+
+  /* test custom btn */
+  /* Đặt chiều cao của phần tử container-btn bằng chiều cao toàn bộ cửa sổ trình duyệt và căn giữa nội dung */
+.container-btn {
+    height: 100vh; /* Chiều cao toàn bộ màn hình */
+    display: flex; /* Sử dụng Flexbox để căn chỉnh nội dung */
+    justify-content: center; /* Căn giữa nội dung theo chiều ngang */
+    align-items: center; /* Căn giữa nội dung theo chiều dọc */
+    background-color: #222; /* Màu nền toàn trang */
+  }
+  
+  /* Định dạng nút với các hiệu ứng chuyển tiếp và kiểu dáng bo tròn */
+  .custom-button {
+    position: relative; /* Đặt vị trí tương đối để các phần tử con có thể được định vị tuyệt đối */
+    background-color: #2e2e30; /* Màu nền của nút */
+    color: #fff; /* Màu chữ của nút */
+    border: none; /* Loại bỏ viền của nút */
+    border-radius: 50%; /* Bo tròn nút thành hình tròn */
+    padding: 10px; /* Khoảng cách bên trong nút */
+    font-size: 17px; /* Kích thước chữ của nút */
+    font-weight: 600; /* Độ dày chữ của nút */
+    display: flex; /* Sử dụng Flexbox để căn chỉnh các phần tử con */
+    align-items: center; /* Căn giữa các phần tử con theo chiều dọc */
+    justify-content: center; /* Căn giữa các phần tử con theo chiều ngang */
+    cursor: pointer; /* Đổi con trỏ chuột thành hình bàn tay khi di chuột qua nút */
+    transition: width 0.5s ease, height 0.5s ease, border-radius 0.5s ease; /* Hiệu ứng mượt mà khi thay đổi kích thước và bo tròn */
+    width: 50px; /* Chiều rộng mặc định của nút */
+    height: 50px; /* Chiều cao mặc định của nút */
+    overflow: hidden; /* Ẩn phần thừa khi co lại */
+  }
+  
+  /* Định dạng biểu tượng bên trong nút */
+  .custom-button .icon {
+    background-color: #007bff; /* Màu nền của biểu tượng */
+    color: white; /* Màu chữ của biểu tượng */
+    border-radius: 50%; /* Bo tròn biểu tượng thành hình tròn */
+    width: 30px; /* Chiều rộng của biểu tượng */
+    height: 30px; /* Chiều cao của biểu tượng */
+    display: flex; /* Sử dụng Flexbox để căn chỉnh nội dung trong biểu tượng */
+    align-items: center; /* Căn giữa nội dung biểu tượng theo chiều dọc */
+    justify-content: center; /* Căn giữa nội dung biểu tượng theo chiều ngang */
+    font-size: 18px; /* Kích thước chữ của biểu tượng */
+    transition: all 0.5s ease; /* Hiệu ứng mượt mà cho tất cả các thuộc tính */
+  }
+  
+  /* Định dạng hiệu ứng ripple khi nút được nhấp */
+  .custom-button .ripple {
+    position: absolute; /* Định vị ripple tuyệt đối để phủ lên nút */
+    width: 100%; /* Chiều rộng ripple bằng chiều rộng của nút */
+    height: 100%; /* Chiều cao ripple bằng chiều cao của nút */
+    background: rgba(255, 255, 255, 0.5); /* Màu nền của ripple với độ trong suốt */
+    border-radius: 50%; /* Bo tròn ripple thành hình tròn */
+    animation: ripple 0.4s ease-out forwards; /* Hiệu ứng hoạt ảnh ripple */
+  }
+  
+  /* Hoạt ảnh ripple */
+  @keyframes ripple {
+    0% {
+      transform: scale(1); /* Bắt đầu từ kích thước gốc */
+    }
+    50% {
+      transform: scale(3); /* Mở rộng đến kích thước lớn */
+      opacity: 0.7; /* Độ mờ của ripple */
+    }
+    100% {
+      transform: scale(1); /* Trở về kích thước gốc */
+      opacity: 0; /* Độ mờ của ripple trở về 0 */
+    }
+  }
+  
+  /* Định dạng nút khi mở rộng */
+  .custom-button.expanded {
+    border-radius: 50px; /* Bo tròn nút với các góc nhẹ nhàng hơn */
+    width: 260px; /* Chiều rộng của nút khi mở rộng */
+    height: 56px; /* Chiều cao của nút khi mở rộng */
+    display: flex; /* Sử dụng Flexbox để căn chỉnh nội dung */
+    align-items: center; /* Căn giữa các phần tử con theo chiều dọc */
+    justify-content: flex-start; /* Căn trái nội dung bên trong nút */
+    
+  }
+  
+  /* Định dạng biểu tượng khi nút mở rộng */
+  .custom-button.expanded .icon {
+    background-color: #007bff; /* Màu nền của biểu tượng khi mở rộng */
+    margin-left: auto; /* Đẩy biểu tượng ra bên phải của nút */
+  }
+  
+  /* Định dạng nội dung khi nút mở rộng */
+  .custom-button .content {
+    opacity: 0; /* Ẩn nội dung khi nút chưa mở rộng */
+    transition: opacity 0.3s ease 0.5s; /* Hiển thị nội dung sau khi hiệu ứng ripple kết thúc */
+    display: flex; /* Hiển thị nội dung và biểu tượng trên cùng một hàng */
+    align-items: center; /* Căn giữa nội dung theo chiều dọc */
+    white-space: nowrap; /* Ngăn chặn nội dung bị gãy dòng */
+  }
+  
+  /* Hiển thị nội dung khi nút mở rộng */
+  .custom-button.expanded .content {
+    opacity: 1; /* Hiển thị nội dung khi nút mở rộng */
+    margin-right: 10px; /* Khoảng cách giữa nội dung và biểu tượng */
+  }
+  
+  
+  
+  
