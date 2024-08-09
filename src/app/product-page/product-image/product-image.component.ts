@@ -8,8 +8,8 @@ type Color = 'red' | 'blue' | 'green' | 'yellow';
   styleUrls: ['./product-image.component.css']
 })
 export class ProductImageComponent implements OnInit {
-  productName = 'Iphone 14 Pro Max';
-  productDescription = 'Iphone14 is the hall of the beauty and smart';
+  productName = 'iPhone 15 Pro';
+  productDescription = 'iPhone 15 pro is the hall of the beauty and smart';
   colors: Color[] = ['red', 'blue', 'green', 'yellow'];
   selectedStorage: string = '128GB';
 

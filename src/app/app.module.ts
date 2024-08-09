@@ -37,6 +37,7 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 import { NavProductDetailComponent } from './product-detail/nav-product-detail/nav-product-detail.component';
 import { VideoProductComponent } from './product-detail/video-product/video-product.component';
 import { SlideVideoProductComponent } from './product-detail/slide-video-product/slide-video-product.component';
+import { OverviewProductComponent } from './product-detail/overview-product/overview-product.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -71,6 +72,7 @@ import { SlideVideoProductComponent } from './product-detail/slide-video-product
     NavProductDetailComponent,
     VideoProductComponent,
     SlideVideoProductComponent,
+    OverviewProductComponent,
   ],
   imports: [
     BrowserModule,

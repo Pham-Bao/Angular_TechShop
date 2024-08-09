@@ -1,0 +1,83 @@
+.product-display {
+    text-align: center;
+    background-color: #000; /* Màu nền đen */
+    padding: 100px 0;
+    color: #fff; /* Màu chữ trắng */
+  }
+  
+  .product-title {
+    font-size: 56px;
+    margin-bottom: 50px;
+    color: #8e8e8e; /* Màu chữ tiêu đề */
+    margin-left: 100px; /* Cách trái 100px */
+    display: flex;
+  }
+  
+  
+  .image-section {
+    position: relative;
+
+  }
+  
+  .image-container {
+    position: relative;
+    overflow: hidden; /* Đảm bảo rằng không có phần nào của ảnh bị tràn ra ngoài */
+  }
+  
+  .image-container img {
+    max-width: 100%;
+    max-height: 470px;
+    transition: opacity 0.5s ease-in-out;
+  }
+  .image-container img.show {
+    opacity: 1;
+  }
+  
+  .color-indicators {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .color-indicators button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin: 0 5px;
+    
+  }
+  .color-options button {
+  width: 24px;
+  height: 24px;
+  border: none;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+  background: linear-gradient(to bottom, #ff0000, #800000); 
+  outline: none;
+  margin-right: 7px;
+  z-index: 1; 
+}
+  .color-circle {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 2px solid #333;
+  }
+  
+  .color-indicators button.active .color-circle {
+    border: 2px solid #fff;
+  }
+  
+  .product-description {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #d3d3d3; /* Màu chữ mô tả */
+  }
+  .container-color {
+    background-color: #2e2e30; /* Màu nền xám */
+    border-radius: 50px; /* Bo cong góc */
+    padding: 8px; /* Khoảng cách giữa nội dung và viền */
+    display: inline-flex; /* Đảm bảo bề rộng co giãn theo nội dung */
+    align-items: center; /* Căn giữa các nút màu theo chiều dọc */
+    justify-content: center; /* Căn giữa các nút màu theo chiều ngang */
+  }
