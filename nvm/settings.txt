@@ -1,0 +1,2 @@
+root: D:\TechShop_Dev\Angular_TechShop\nvm
+path: C:\Program Files\nodejs

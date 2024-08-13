@@ -53,4 +53,15 @@ export class OverviewProductComponent implements AfterViewInit {
       this.isExpanded = !this.isExpanded;
     }, 400); // Thời gian ripple là 400ms
   }
+
+
+
+  isShining = false;
+
+  triggerShine() {
+    this.isShining = true;
+    setTimeout(() => {
+      this.isShining = false;
+    }, 1000); // Hiệu ứng kéo dài 1 giây
+  }
 }
