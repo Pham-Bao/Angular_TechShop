@@ -38,6 +38,12 @@ import { NavProductDetailComponent } from './product-detail/nav-product-detail/n
 import { VideoProductComponent } from './product-detail/video-product/video-product.component';
 import { SlideVideoProductComponent } from './product-detail/slide-video-product/slide-video-product.component';
 import { OverviewProductComponent } from './product-detail/overview-product/overview-product.component';
+import { TitanComponent } from './product-detail/titan/titan.component';
+import { BuyProductComponent } from './buy-product/buy-product.component';
+import { ProductOptionComponent } from './buy-product/product-option/product-option.component';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -73,6 +79,9 @@ import { OverviewProductComponent } from './product-detail/overview-product/over
     VideoProductComponent,
     SlideVideoProductComponent,
     OverviewProductComponent,
+    TitanComponent,
+    BuyProductComponent,
+    ProductOptionComponent
   ],
   imports: [
     BrowserModule,

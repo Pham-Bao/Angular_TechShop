@@ -1,4 +1,5 @@
 import { Component, HostListener  } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nav-product-detail',
@@ -16,5 +17,12 @@ export class NavProductDetailComponent {
   onWindowScroll() {
     const scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
     this.isSticky = scrollPosition > 100; // Điều chỉnh vị trí cuộn khi thanh điều hướng xuất hiện
+  }
+
+
+  constructor(private router: Router) {}
+
+  navigateToBuyProduct() {
+    this.router.navigate(['/buy-product']);
   }
 }

@@ -1,0 +1,66 @@
+.hero-section {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #101010;
+}
+
+.content {
+    position: relative;
+}
+
+.media-container {
+    width: 85%;
+    max-width: 1200px;
+}
+
+.responsive-video {
+    width: 100%;
+    height: auto;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    background-color:rgb(0, 0, 0); /* Khoảng cách giữa video và hình ảnh */
+}
+
+.image-wrapper {
+    position: relative;
+    width: 50%;
+    overflow: hidden;
+    margin: 0 10px; /* Khoảng cách giữa hai ảnh */
+}
+
+.metal-image {
+    width: 120%; /* Mở rộng ảnh lên 120% */
+    height: auto;
+    transition: width 1s ease, filter 1s ease; /* Hiệu ứng thu nhỏ về 100% */
+}
+.metal-image2 {
+    width: 120%; /* Mở rộng ảnh lên 120% */
+    height: 520px;
+    transition: width 1s ease, filter 1s ease; /* Hiệu ứng thu nhỏ về 100% */
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Lớp phủ đen mờ */
+    transition: opacity 1s ease; /* Hiệu ứng sáng dần lớp phủ */
+    opacity: 1; /* Ban đầu lớp phủ đen */
+}
+
+.image-wrapper.in-view .metal-image {
+    width: 100%; /* Thu nhỏ về 100% khi trong tầm nhìn */
+}
+
+.image-wrapper.in-view .overlay {
+    opacity: 0; /* Lớp phủ mờ dần khi ảnh thu nhỏ */
+}

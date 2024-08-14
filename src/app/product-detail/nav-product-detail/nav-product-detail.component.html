@@ -16,7 +16,7 @@
               href="#" 
               [ngClass]="{ 'active': activeLink === 'specs' }" 
               (click)="setActiveLink('specs')">Thông Số Kỹ Thuật</a>
-           <a class="nav-link btn-mua  text-white mt-1" href="#">Mua</a>
+           <a class="nav-link btn-mua  text-white mt-1" (click)="navigateToBuyProduct()">Mua</a>
        </nav>
    </div>
 </div>
