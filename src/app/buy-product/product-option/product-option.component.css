@@ -1,9 +1,195 @@
-.bgr-img{
- background-color: #f6f6f8;
+
+.special-offer, .support-offer {
+  background-color: #f5f5f7; /* Màu nền nhẹ nhàng */
+  padding: 0.5rem 1rem; /* Khoảng cách bên trong */
+  border-radius: 20px; /* Bo góc */
+  display: inline-block;
+  margin-bottom: 1rem;
 }
-.product-image{
-  width: 80%;
-  height: auto;
-  margin: 100px;
-  
+
+.special-offer {
+  margin-bottom: 0.5rem; /* Khoảng cách giữa hai đoạn văn */
+}
+
+.support-offer {
+  margin-left: 20px;
+}
+
+.text-lg-end {
+  text-align: right; /* Căn phải */
+}
+
+.lead {
+  font-size: 1.25rem; /* Kích thước chữ to hơn */
+  font-weight: 400;
+}
+
+@media (max-width: 992px) {
+  .special-offer, .support-offer {
+    text-align: center;
+    margin: 0 auto 1rem;
+  }
+
+  .support-offer {
+    margin-left: 0;
+  }
+}
+
+
+
+
+.product-display {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product-carousel {
+  display: flex;
+  align-items: center;
+}
+.col-lg-8 {
+  position: relative; /* Để các nút điều hướng có thể được căn chỉnh tuyệt đối */
+}
+
+.product-image-container {
+  background-color: #f6f6f8; /* Màu nền của ảnh */
+  width: 100%; /* Chiếm toàn bộ chiều rộng của cột */
+  padding: 10px; /* Khoảng cách xung quanh ảnh */
+  box-sizing: border-box; /* Đảm bảo padding không ảnh hưởng đến kích thước */
+  display: flex;
+  justify-content: center; /* Căn giữa ảnh trong container */
+  position: relative; /* Để có thể căn chỉnh các nút điều hướng */
+  border-radius: 10px;
+
+}
+
+.product-image {
+  width: 50%; /* Đảm bảo ảnh chiếm toàn bộ chiều rộng của container */
+  height: auto; /* Giữ tỷ lệ ảnh */
+  object-fit: cover; /* Đảm bảo ảnh không bị biến dạng */
+}
+
+
+.carousel-icon {
+  font-size: 24px;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.color-selection {
+  text-align: right;
+}
+
+.color-options {
+  display: flex;
+  gap: 10px;
+}
+
+.color-options div {
+  border: 2px solid #0000;
+  border-radius: 50%;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-flex;
+  margin-bottom: 2.7em;
+  position: relative;
+  z-index: 1;
+  width: 28px;
+  height: 28px;
+}
+
+.color-options .selected {
+  border: 1px solid rgb(153, 153, 153);
+}
+
+
+
+.custom-carousel-button {
+  background-color: #dfdee2;
+  border: none; /* Remove the border */
+  width: 56px; /* Set the width */
+  height: 56px; /* Set the height */
+  border-radius: 50%; /* Make the button circular */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: absolute; /* Đặt các nút ở vị trí tuyệt đối trong .col-lg-8 */
+  top: 50%; /* Căn giữa theo chiều dọc */
+  transform: translateY(-50%); /* Điều chỉnh vị trí dọc của nút */
+
+}
+
+.custom-carousel-button:disabled {
+  opacity: 0.5; /* Dim the button when disabled */
+  cursor: not-allowed;
+}
+
+.carousel-icon.left {
+  color: #000; /* Set the icon color */
+  font-size: 20px; /* Set the icon size */
+}
+
+.left-btn {
+  left: 20px;
+}
+
+.right-btn {
+  right: 20px;
+}
+
+
+.storage-options {
+  width: 350px; /* Tăng chiều rộng để khớp với hình */
+  margin: auto;
+  text-align: left; /* Căn trái toàn bộ nội dung */
+  font-family: Arial, sans-serif; /* Đặt font chữ phù hợp */
+}
+
+h3 {
+  font-family: SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: .009em;
+  line-height: 1.1666666667;
+}
+
+.option {
+  border: 0.7px solid #ccc;
+  padding: 15px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  border-radius: 8px; /* Bo góc giống với hình */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: border-color 0.3s, background-color 0.3s;
+}
+
+.option.selected {
+  border-color: #3367d6; /* Màu xanh giống như hình */
+  background-color: #eaf1ff; /* Thêm nền xanh nhạt cho lựa chọn */
+}
+
+.capacity {
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.price {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.installment {
+  font-size: 14px;
+  color: grey;
+}
+
+.note {
+  font-size: 12px;
+  color: grey;
+  margin-top: 20px;
 }

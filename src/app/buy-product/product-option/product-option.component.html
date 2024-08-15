@@ -1,29 +1,77 @@
-<div class="container-fluid">
+<div class="container">
+  <div class="container-fluid py-5">
+    <div class="row align-items-center">
+      <div class="col-lg-8">
+        <h1 class="mb-3">Mua iPhone 15</h1>
+        <p class="lead mb-1">Từ 22.999.000đ hoặc 936.000đ/tháng trong 24 tháng*</p>
+        <p class="text-muted">Trả góp theo tháng với phí dịch vụ thực 1.67%, sau khi thanh toán lần đầu 20%.</p>
+      </div>
+      <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+        <p class="special-offer mb-3">Nhận 800.000đ - 22.000.000đ khi đổi.</p>
+        <p class="support-offer">Có tài trợ.</p>
+    </div>
+    
+    </div>
+  </div>
+  
   <div class="container">
     <div class="row">
       <div class="col-lg-8">
-        <h1>Mua iPhone 15</h1>
-        <p>Từ 22.999.000đ hoặc 936.000đ/thángmỗi tháng trong 24 tháng*</p>
-        <p>
-          Trả góp theo tháng với phí dịch vụ thực 1.67%, sau khi thanh toán lần
-          đầu 20%.
-        </p>
+        <div class="product-image-container">
+          <button (click)="changeImage(selectedImageIndex - 1)" [disabled]="selectedImageIndex === 0" class="custom-carousel-button left-btn">
+            &#10094;
+          </button>
+          <img [src]="selectedImages[selectedImageIndex]" alt="Product Image" class="product-image">
+          <button (click)="changeImage(selectedImageIndex + 1)" [disabled]="selectedImageIndex === selectedImages.length - 1" class="right-btn custom-carousel-button">
+            &#10095;
+          </button>
+        </div>
       </div>
+      
       <div class="col-lg-4">
-        <p>Nhận 800.000đ- 22.000.000đ khi đổi.</p>
-        <p>Có tài trợ.</p>
+        <div class="container-fluid">
+        <h4>Màu. Chọn màu bạn yêu thích.</h4>
+        <h5 class="py-4">Màu-Hồng</h5>
+        <div class="color-options">
+          <div *ngFor="let color of colors; let i = index" 
+               [style.background-color]="color.colorCode" 
+               [class.selected]="i === selectedColorIndex"
+               (click)="changeColor(i)">
+          </div>
+        </div>
+        </div>
+
+
+        
+        <div class="container-fluid">
+          <div class="storage-options py-5 ">
+            <h3>Dung lượng lưu trữ. Bạn cần bao nhiêu dung lượng?</h3>
+            <div class="option mt-5" [class.selected]="selectedOption === '128GB'" (click)="selectOption('128GB')">
+              <div class="capacity">128GB<sup>2</sup></div>
+              <div class="price col-lg-">22.999.000đ</div>
+              <div class="installment">hoặc 936.000đ/tháng trong 24 tháng*</div>
+            </div>
+            <div class="option" [class.selected]="selectedOption === '256GB'" (click)="selectOption('256GB')">
+              <div class="capacity">256GB<sup>2</sup></div>
+              <div class="price">25.999.000đ</div>
+              <div class="installment">hoặc 1.059.000đ/tháng trong 24 tháng*</div>
+            </div>
+            <div class="option" [class.selected]="selectedOption === '512GB'" (click)="selectOption('512GB')">
+              <div class="capacity">512GB<sup>2</sup></div>
+              <div class="price">31.999.000đ</div>
+              <div class="installment">hoặc 1.303.000đ/tháng trong 24 tháng*</div>
+            </div>
+            <p class="note container">
+              Trả góp theo tháng với phí dịch vụ thực 1.67%, sau khi thanh toán lần đầu 20%. Có thêm tùy chọn thanh toán khi hoàn tất giao dịch.
+            </p>
+          </div>
+          
+          
+        </div>
+
       </div>
     </div>
   </div>
-  <div class="container">
-<div class="row">
-    <div class="col-lg-8 bgr-img rounded-6 text-center">
-        <img src="assets/img-buy-product/image.png" alt="img ảnh máy" class="product-image">
-    </div>
-    <div class="col-lg-4">
-        Phiên bản. Mẫu nào phù hợp nhất với bạn?
-    </div>
-
-</div>
-  </div>
-</div>
+  
+  
+  
