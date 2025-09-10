@@ -193,3 +193,15 @@ h3 {
   color: grey;
   margin-top: 20px;
 }
+.main-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #000;
+  margin: 0;
+}
+
+.sub-title-text {
+  font-size: 28px;
+  font-weight: normal;
+  color: #6f6e72;
+}
