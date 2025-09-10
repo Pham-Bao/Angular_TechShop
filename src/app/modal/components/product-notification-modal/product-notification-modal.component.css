@@ -1,0 +1,119 @@
+.modal-content {
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.modal-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.modal-body {
+  font-size: 16px;
+  color: #333;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border: none;
+}
+.container {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.custom-close {
+  position: absolute;
+  top: 44px;    /* cách trên 44px */
+  right: 44px;  /* cách bên phải 44px */
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 50%;
+  background-color: #f2f2f5;
+  color: #555;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 32px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.custom-close:hover {
+  background-color: #e0e0e5;
+  color: #000;
+}
+.tabs {
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid #ddd; /* đường kẻ mờ chung */
+  margin-bottom: 15px;
+}
+
+.tab {
+  background: none;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 400;
+  border-bottom: 3px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.tab:hover {
+  color: #333;
+}
+
+.tab.active {
+  font-weight: 600;
+  border-bottom: 3px solid #333; /* gạch chân đậm khi active */
+}
+
+.tab-pane {
+  display: none;
+}
+
+.tab-pane.active {
+  display: block;
+}
+
+.product-table {
+  margin: 0 auto; /* căn giữa bảng */
+  border-collapse: collapse;
+  width: 70%; /* bạn có thể chỉnh */
+}
+
+.product-table td {
+    vertical-align: top;
+    padding: 11px 0;
+    font-size: 21px;
+    line-height: 1.381002381;
+    font-weight: 400;
+    letter-spacing: .011em;
+    font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 600;
+}
+
+
+.product-table .left {
+  text-align: left;
+  font-weight: bold;
+}
+
+.product-table .right {
+  text-align: right;
+  font-weight: bold;
+}
+.btn-buy {
+  background-color: #007bff;
+  border: none;
+  color: white;
+  font-weight: bold;
+  padding: 10px 25px;
+  border-radius: 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: none;
+  font-family: Arial, Helvetica, sans-serif;
+}

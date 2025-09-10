@@ -10,8 +10,12 @@
   .icon-item {
     text-align: center;
     margin: 10px;
+    cursor: pointer;
+    transition: transform 0.2s;
   }
-  
+  .icon-item:hover {
+  transform: scale(1.05);
+}
   .icon-item img {
     display: block;
     margin: 0 auto 2px;

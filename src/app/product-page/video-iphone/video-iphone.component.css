@@ -8,17 +8,17 @@
   
   .responsive-video.shrink1 {
     width: 97%;
-    border-radius: 10px;
+    border-radius: 24px;
   }
   
   .responsive-video.shrink2 {
     width: 90%;
-    border-radius: 15px;
+    border-radius: 32px;
   }
   
   .responsive-video.shrink3 {
     width: 83%;
-    border-radius: 20px;
+    border-radius: 48px;
   }
   .video-container {
     display: flex;
@@ -26,8 +26,8 @@
     align-items: center;
     width: 100%;
     margin: 0 auto;
-    height: 80%; /* hoặc giá trị cụ thể như 400px nếu muốn cố định */
-    overflow: hidden; /* Ẩn phần video vượt quá chiều cao */
-    position: relative; /* Để căn chỉnh video bên trong */
+    height: 80%; 
+    overflow: hidden;
+    position: relative;
   }
   

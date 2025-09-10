@@ -41,6 +41,7 @@ import { OverviewProductComponent } from './product-detail/overview-product/over
 import { TitanComponent } from './product-detail/titan/titan.component';
 import { BuyProductComponent } from './buy-product/buy-product.component';
 import { ProductOptionComponent } from './buy-product/product-option/product-option.component';
+import { ProductNotificationModalComponent } from './modal/components/product-notification-modal/product-notification-modal.component';
 
 
 
@@ -81,7 +82,8 @@ import { ProductOptionComponent } from './buy-product/product-option/product-opt
     OverviewProductComponent,
     TitanComponent,
     BuyProductComponent,
-    ProductOptionComponent
+    ProductOptionComponent,
+    ProductNotificationModalComponent
   ],
   imports: [
     BrowserModule,

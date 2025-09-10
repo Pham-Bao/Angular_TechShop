@@ -1,0 +1,112 @@
+<div
+  class="modal fade show d-block"
+  *ngIf="isVisible"
+  style="background: rgba(0, 0, 0, 0.5)"
+>
+  <div class="modal-dialog modal-lg mx-auto">
+    <div class="modal-content p-4" style="border-radius: 12px">
+      <button
+        type="button"
+        class="btn-close custom-close"
+        style="position: absolute; top: 15px; right: 15px"
+        (click)="close()"
+      ></button>
+
+      <h2 class="modal-title text-center mb-3 mt-5">
+        Cửa hàng đang trong giai đoạn phát triển. Nhiều sản phẩm còn thiếu. Xin
+        lỗi vì sự bất tiện này!
+      </h2>
+
+      <p class="text-center mb-4">
+        Chúng tôi đang cố gắng để đưa tới cho thêm nhiều sản phẩm mới, trong lúc
+        này bạn có thể tham khảo các sản phẩm hiện có bên dưới.
+        <b>MiniPhone.vn</b> xin cảm ơn.
+      </p>
+      <div class="tabs">
+        <button
+          class="tab"
+          [class.active]="activeTab === 'iphone'"
+          (click)="setActiveTab('iphone')"
+        >
+          iPhone
+        </button>
+        <button
+          class="tab"
+          [class.active]="activeTab === 'ipad'"
+          (click)="setActiveTab('ipad')"
+        >
+          iPad
+        </button>
+        <button
+          class="tab"
+          [class.active]="activeTab === 'mac'"
+          (click)="setActiveTab('mac')"
+        >
+          Mac
+        </button>
+        <button
+          class="tab"
+          [class.active]="activeTab === 'watch'"
+          (click)="setActiveTab('watch')"
+        >
+          Apple Watch
+        </button>
+        <button
+          class="tab"
+          [class.active]="activeTab === 'other'"
+          (click)="setActiveTab('other')"
+        >
+          Thiết bị khác
+        </button>
+      </div>
+
+      <div class="tab-content mt-5">
+        <table class="product-table">
+          <thead>
+            <tr>
+              <th class="left">Sản phẩm của bạn</th>
+              <th class="right">Khoảng giá ước tính</th>
+            </tr>
+          </thead>
+          <tbody *ngIf="activeTab === 'iphone'">
+            <tr *ngFor="let p of products.iphone">
+              <td class="left">{{ p.name }}</td>
+              <td class="right">Chỉ từ {{ p.price }}</td>
+            </tr>
+          </tbody>
+
+          <tbody *ngIf="activeTab === 'ipad'">
+            <tr *ngFor="let p of products.ipad">
+              <td class="left">{{ p.name }}</td>
+              <td class="right">Chỉ từ {{ p.price }}</td>
+            </tr>
+          </tbody>
+
+          <tbody *ngIf="activeTab === 'mac'">
+            <tr *ngFor="let p of products.mac">
+              <td class="left">{{ p.name }}</td>
+              <td class="right">Chỉ từ {{ p.price }}</td>
+            </tr>
+          </tbody>
+
+          <tbody *ngIf="activeTab === 'watch'">
+            <tr *ngFor="let p of products.watch">
+              <td class="left">{{ p.name }}</td>
+              <td class="right">Chỉ từ {{ p.price }}</td>
+            </tr>
+          </tbody>
+
+          <tbody *ngIf="activeTab === 'other'">
+            <tr *ngFor="let p of products.other">
+              <td class="left">{{ p.name }}</td>
+              <td class="right">Chỉ từ {{ p.price }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="container mt-5 text-center">
+        <button class="btn-buy" routerLink="/product-page">Mua ngay</button>
+      </div>
+    </div>
+  </div>
+</div>
