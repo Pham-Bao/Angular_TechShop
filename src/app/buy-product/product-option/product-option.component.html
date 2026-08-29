@@ -31,10 +31,10 @@
       <div class="col-lg-4">
         <div class="container-fluid">
         <h4>Màu. Chọn màu bạn yêu thích.</h4>
-        <h5 class="py-4">Màu-Hồng</h5>
+        <h5 class="py-4">Màu - {{ colors[selectedColorIndex].colorName }}</h5>
         <div class="color-options">
-          <div *ngFor="let color of colors; let i = index" 
-               [style.background-color]="color.colorCode" 
+          <div *ngFor="let color of colors; let i = index"
+               [style.background-color]="color.colorCode"
                [class.selected]="i === selectedColorIndex"
                (click)="changeColor(i)">
           </div>
@@ -42,31 +42,23 @@
         </div>
 
 
-        
+
         <div class="container-fluid">
           <div class="storage-options py-5 ">
             <h3>Dung lượng lưu trữ. Bạn cần bao nhiêu dung lượng?</h3>
-            <div class="option mt-5" [class.selected]="selectedOption === '128GB'" (click)="selectOption('128GB')">
-              <div class="capacity">128GB<sup>2</sup></div>
-              <div class="price col-lg-">22.999.000đ</div>
-              <div class="installment">hoặc 936.000đ/tháng trong 24 tháng*</div>
-            </div>
-            <div class="option" [class.selected]="selectedOption === '256GB'" (click)="selectOption('256GB')">
-              <div class="capacity">256GB<sup>2</sup></div>
-              <div class="price">25.999.000đ</div>
-              <div class="installment">hoặc 1.059.000đ/tháng trong 24 tháng*</div>
-            </div>
-            <div class="option" [class.selected]="selectedOption === '512GB'" (click)="selectOption('512GB')">
-              <div class="capacity">512GB<sup>2</sup></div>
-              <div class="price">31.999.000đ</div>
-              <div class="installment">hoặc 1.303.000đ/tháng trong 24 tháng*</div>
+            <div class="option mt-5" *ngFor="let opt of storageOptions" [class.selected]="selectedOption === opt.capacity" (click)="selectOption(opt.capacity)">
+              <div class="capacity">{{ opt.capacity }}<sup>2</sup></div>
+              <div class="price">{{ opt.price | number }}đ</div>
+              <div class="installment">hoặc {{ opt.installment | number }}đ/tháng trong 24 tháng*</div>
             </div>
             <p class="note container">
               Trả góp theo tháng với phí dịch vụ thực 1.67%, sau khi thanh toán lần đầu 20%. Có thêm tùy chọn thanh toán khi hoàn tất giao dịch.
             </p>
           </div>
-          
-          
+
+          <div class="buy-actions py-3">
+            <button class="btn btn-dark btn-lg" (click)="addToCart()">Thêm vào giỏ hàng</button>
+          </div>
         </div>
 
       </div>

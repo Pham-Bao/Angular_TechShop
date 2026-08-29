@@ -60,9 +60,35 @@
   
   .product-image {
     width: 90px;
-    height: 90px; 
+    height: 90px;
     background-color: #ccc;
-    margin-right: 15px; 
+    margin-right: 15px;
+    overflow: hidden;
+  }
+
+  .product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .empty-cart {
+    padding: 40px 0;
+    font-size: 18px;
+    color: #666;
+  }
+
+  .checkout-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+
+  .checkout-btn:disabled:hover::before {
+    left: -100%;
+  }
+
+  .checkout-btn:disabled:hover {
+    color: #000;
   }
   
   .item-details {

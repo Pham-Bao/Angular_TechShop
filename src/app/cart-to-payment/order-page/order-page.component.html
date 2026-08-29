@@ -1,91 +1,104 @@
 <div class="order-page">
-    <div class="order-info">
-      <div class="combo-boxes">
-        <div class="combo-box">
-          <label for="info" style="font-weight: 900;">Info</label>
-          <div class="dropdown">
-            <button class="dropdown-button" (click)="toggleDropdown()">
-              Select Info
-              <span class="dropdown-arrow"><img style="width: 30px; height: 30px;" src="assets/img/expand.png" alt=""></span>
-            </button>
-            <div class="dropdown-content" [class.show]="dropdownOpen" id="dropdownContent">
-              <div class="info-item" *ngFor="let info of infoList; let i = index">
-                <input type="checkbox" class="round-checkbox" [id]="'info-' + i" name="info" (click)="selectInfo(i)">
-                <label [for]="'info-' + i">
-                  <div>{{ info.name }}</div>
-                  <div>{{ info.phone }}</div>
-                  <div>{{ info.address }}</div>
-                </label>
-              </div>
-              <button class="add-new-address" (click)="addNewAddress()">Thêm địa chỉ mới</button>
+  <div class="order-info">
+    <div class="combo-boxes">
+      <div class="combo-box">
+        <label style="font-weight: 900;">Info</label>
+        <div class="dropdown">
+          <button class="dropdown-button" (click)="toggleDropdown()">
+            {{ infoList[selectedInfoIndex].name || 'Select Info' }}
+            <span class="dropdown-arrow"><img style="width: 30px; height: 30px;" src="assets/img/expand.png" alt=""></span>
+          </button>
+          <div class="dropdown-content" [class.show]="dropdownOpen" id="dropdownContent">
+            <div class="info-item" *ngFor="let info of infoList; let i = index" [class.selected]="i === selectedInfoIndex" (click)="selectInfo(i)">
+              <div>{{ info.name }}</div>
+              <div>{{ info.phone }}</div>
+              <div>{{ info.address }}</div>
             </div>
-          </div>
-        </div>
-        <div class="combo-box">
-          <label for="coupon" style="font-weight: 900;">Coupon</label>
-          <div class="dropdown">
-            <button class="dropdown-button">
-              Select Coupon
-              <span class="dropdown-arrow">
-                <img src="assets/img/expand.png" style="width: 30px; height: 30px;" alt="">
-              </span>
-            </button>
+            <button class="add-new-address" (click)="addNewAddress()">Thêm địa chỉ mới</button>
           </div>
         </div>
       </div>
-      <div class="check-boxes">
-        <div class="check-box">
-          <input type="checkbox" id="option1" name="option1" class="round-checkbox">
-          <label for="option1">Option 1</label>
-        </div>
-        <div class="check-box">
-          <input type="checkbox" id="option2" name="option2" class="round-checkbox">
-          <label for="option2">Option 2</label>
+      <div class="combo-box">
+        <label for="coupon" style="font-weight: 900;">Coupon</label>
+        <div class="dropdown">
+          <button class="dropdown-button">
+            Select Coupon
+            <span class="dropdown-arrow">
+              <img src="assets/img/expand.png" style="width: 30px; height: 30px;" alt="">
+            </span>
+          </button>
         </div>
       </div>
     </div>
-    <div class="order-items">
-      <table class="order-items-table">
-        <thead>
-          <tr>
-            <th>Image</th>
-            <th>Name</th>
-            <th>Color</th>
-            <th>Quantity</th>
-            <th>Price</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let item of orderItems">
-            <td>{{ item.name }}</td>
-            <td><div class="item-color" [style.backgroundColor]="item.color"></div></td>
-            <td>{{ item.quantity }}</td>
-            <td>{{ item.price }}$</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  
-    <div class="new-address-form" *ngIf="showForm">
-      <div class="form-container">
-        <form #addressForm="ngForm" (ngSubmit)="saveAddress(addressForm)">
-          <label for="name">Tên:</label>
-          <input type="text" id="name" name="name" ngModel>
-  
-          <label for="address">Địa chỉ:</label>
-          <input type="text" id="address" name="address" ngModel>
-  
-          <label for="phone">Số điện thoại:</label>
-          <input type="text" id="phone" name="phone" ngModel>
-  
-          <div class="map-placeholder">Google Maps sẽ hiển thị ở đây</div>
-  
-          <div class="form-actions">
-            <button type="submit" class="save-button">Lưu</button>
-            <button type="button" class="cancel-button" (click)="showForm = false">Hủy</button>
-          </div>
-        </form>
+    <div class="check-boxes">
+      <div class="check-box">
+        <input type="checkbox" id="option1" name="option1" class="round-checkbox">
+        <label for="option1">Option 1</label>
+      </div>
+      <div class="check-box">
+        <input type="checkbox" id="option2" name="option2" class="round-checkbox">
+        <label for="option2">Option 2</label>
       </div>
     </div>
   </div>
-  
+  <div class="order-items">
+    <table class="order-items-table">
+      <thead>
+        <tr>
+          <th>Image</th>
+          <th>Name</th>
+          <th>Color</th>
+          <th>Quantity</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of orderItems">
+          <td><img [src]="item.image" [alt]="item.name" class="order-item-image"></td>
+          <td>{{ item.name }}</td>
+          <td><div class="item-color" [style.backgroundColor]="item.colorCode"></div></td>
+          <td>{{ item.quantity }}</td>
+          <td>{{ item.price * item.quantity | number }}đ</td>
+        </tr>
+        <tr *ngIf="!orderItems.length">
+          <td colspan="5">Chưa có sản phẩm nào được chọn. Quay lại giỏ hàng để chọn sản phẩm.</td>
+        </tr>
+      </tbody>
+      <tfoot *ngIf="orderItems.length">
+        <tr>
+          <td colspan="4" class="total-label">Tổng cộng</td>
+          <td class="total-value">{{ total | number }}đ</td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+
+  <div class="order-actions">
+    <button class="checkout-btn" [disabled]="!orderItems.length" (click)="goToPayment()">
+      Tiếp tục thanh toán
+      <span class="arrow">➔</span>
+    </button>
+  </div>
+
+  <div class="new-address-form" *ngIf="showForm">
+    <div class="form-container">
+      <form #addressForm="ngForm" (ngSubmit)="saveAddress(addressForm)">
+        <label for="name">Tên:</label>
+        <input type="text" id="name" name="name" ngModel required>
+
+        <label for="address">Địa chỉ:</label>
+        <input type="text" id="address" name="address" ngModel required>
+
+        <label for="phone">Số điện thoại:</label>
+        <input type="text" id="phone" name="phone" ngModel required>
+
+        <div class="map-placeholder">Google Maps sẽ hiển thị ở đây</div>
+
+        <div class="form-actions">
+          <button type="submit" class="save-button">Lưu</button>
+          <button type="button" class="cancel-button" (click)="showForm = false">Hủy</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

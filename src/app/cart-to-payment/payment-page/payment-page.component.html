@@ -1,1 +1,49 @@
-<p>payment-page works!</p>
+<div class="payment-page" *ngIf="!orderPlaced; else success">
+  <h2 class="payment-title">Thanh toán</h2>
+
+  <div class="payment-summary" *ngIf="items.length; else noItems">
+    <div class="summary-item" *ngFor="let item of items">
+      <img [src]="item.image" [alt]="item.name" class="summary-image">
+      <div class="summary-details">
+        <div class="summary-name">{{ item.name }}</div>
+        <div class="summary-qty">Số lượng: {{ item.quantity }}</div>
+      </div>
+      <div class="summary-price">{{ item.price * item.quantity | number }}đ</div>
+    </div>
+    <div class="summary-total">
+      <span>Tổng cộng</span>
+      <span>{{ total | number }}đ</span>
+    </div>
+  </div>
+  <ng-template #noItems>
+    <p class="empty-payment">Chưa có sản phẩm nào để thanh toán. Quay lại giỏ hàng để chọn sản phẩm.</p>
+  </ng-template>
+
+  <div class="payment-methods" *ngIf="items.length">
+    <h3>Phương thức thanh toán</h3>
+    <div class="method" [class.selected]="paymentMethod === 'cod'" (click)="selectMethod('cod')">
+      Thanh toán khi nhận hàng (COD)
+    </div>
+    <div class="method" [class.selected]="paymentMethod === 'bank'" (click)="selectMethod('bank')">
+      Chuyển khoản ngân hàng
+    </div>
+    <div class="method" [class.selected]="paymentMethod === 'card'" (click)="selectMethod('card')">
+      Thẻ tín dụng / ghi nợ
+    </div>
+  </div>
+
+  <div class="payment-actions" *ngIf="items.length">
+    <button class="checkout-btn" (click)="placeOrder()">
+      Đặt hàng
+      <span class="arrow">➔</span>
+    </button>
+  </div>
+</div>
+
+<ng-template #success>
+  <div class="payment-success">
+    <h2>Đặt hàng thành công!</h2>
+    <p>Cảm ơn bạn đã mua sắm tại TechShop. Đơn hàng của bạn đang được xử lý.</p>
+    <button class="checkout-btn" (click)="backToHome()">Về trang chủ</button>
+  </div>
+</ng-template>

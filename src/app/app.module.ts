@@ -27,7 +27,6 @@ import { ProductPageComponent } from './product-page/product-page.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { ProductImageComponent } from './product-page/product-image/product-image.component';
 import { CarouselComponent } from './product-page/carousel/carousel.component';
-import { CartToPaymentModule } from './cart-to-payment/cart-to-payment.module';
 import { VideoIphoneComponent } from './product-page/video-iphone/video-iphone.component';
 import { LearnIphoneComponent } from './product-page/learn-iphone/learn-iphone.component';
 import { ProductIphoneComponent } from './product-page/product-iphone/product-iphone.component';
@@ -88,7 +87,6 @@ import { ProductNotificationModalComponent } from './modal/components/product-no
   imports: [
     BrowserModule,
     AppRoutingModule,
-    CartToPaymentModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
